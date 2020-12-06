@@ -1,0 +1,74 @@
+$header_color: #737273;
+$footer_bgcolor: #efefef;
+
+/***************************************
+        　　　　　共通
+***************************************/
+html, body {
+    font-size: 14px;
+    font-family: 'メイリオ';
+    margin: 0px;
+    padding: 0px;
+
+}
+
+h1 {
+    font-size: 92px;
+    font-weight: bolder;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: $header_color;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+/***************************************
+        　　　　　固有
+***************************************/
+div.container {
+    margin-top: 80px;
+}
+
+#header-title {
+    font-weight: bold;
+}
+
+footer {
+    height: 500px;
+    margin-top: 80px;
+    padding: 30px 120px 10px 120px;
+    background-color: #efefef;
+
+    h5 {
+        font-size: 14px;
+        font-weight: bold;
+        color: $header_color;
+    }
+
+    .list-group-item {
+        background-color: $footer_bgcolor;
+        border: none;
+    }
+
+    .partition {
+        margin-bottom: 30px;
+    }
+
+    p#copyright {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .sns-icon {
+        margin-right: 10px;
+    }
+}

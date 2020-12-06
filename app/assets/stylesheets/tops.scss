@@ -1,0 +1,42 @@
+$border: #737273 1px solid;
+$bg-image-url: image-url('world.png');
+
+div.top-content-area {
+    background-image: $bg-image-url;
+    height: 260px;
+    padding-top: 30px;
+    margin: 26px 0px;
+    text-align: center;
+/*
+    img#top-content-img {
+        position: relative;
+        height: 320px;
+        opacity: 0.3;
+    }
+    */
+}
+
+div.card-footer {
+    background-color: transparent;
+    border-top: none;
+}
+
+div.campaign-topic-area {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    a.campaign-topic-link {
+        display: inline-block;
+        height: 30px;
+        background-color: #ffffff;
+        color: #737273;
+        font-size: 11px;
+
+        text-align: center;
+        border: $border;
+        border-radius: 30px;
+        margin: 2.5px 1.5px;
+        padding: 7px 15px;
+    }
+}
