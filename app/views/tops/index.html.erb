@@ -5,7 +5,7 @@
       <h1>みんなで世界を変えよう！</h1>
       <p>人が参加しています</p>
       <p><%= link_to 'みんなで社会を動かすしくみ', campaigns_path, class: 'start-campaign-link' %></p>
-      <button type="button" class="btn btn-primary btn-lg">キャンペーンを立ち上げる</button>
+      <%= link_to 'キャンペーンを立ち上げる', new_campaign_path, {class: 'btn btn-primary btn-lg'}%>
     </div>
 
     <!-- 新規キャンペーン -->

@@ -1,3 +1,4 @@
+$title_color:  #ec2c22;
 $header_color: #737273;
 $footer_bgcolor: #efefef;
 
@@ -39,7 +40,9 @@ div.container {
 }
 
 #header-title {
+    color: $title_color;
     font-weight: bold;
+    font-size: 1.75rem !important;
 }
 
 footer {

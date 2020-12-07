@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Campaigns</h1>
+<h1 class="page-title">賛同できるキャンペーン一覧</h1><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Goal</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><%= link_to '注目', campaigns_path(condition: 'attend'), {class: 'nav-link active'} %></li>
+  <li class="nav-item"><%= link_to '人気', campaigns_path(condition: 'popular'), {class: 'nav-link'} %></li>
+  <li class="nav-item"><%= link_to '最新', campaigns_path(condition: 'latest'), {class: 'nav-link'} %></li>
+  <li class="nav-item"><%= link_to '成功事例', campaigns_path(condition: 'succeed'), {class: 'nav-link'} %></li>
+</ul>
 
-  <tbody>
-    <% @campaigns.each do |campaign| %>
-      <tr>
-        <td><%= campaign.title %></td>
-        <td><%= campaign.content %></td>
-        <td><%= campaign.goal %></td>
-        <td><%= link_to 'Show', campaign %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- 新規キャンペーン -->
+<div class="campaign-list">
+  <% @campaigns.each do |campaign| %>
+  <div class="card">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <img src="" class="card-img-right" alt="カードの画像">
+      </div>
 
-<br>
+      <div class=" card-body col-xs-12 col-sm-8">
+        <h5 class="card-title"><%= campaign.title %></h5>
+        
+        <p class="card-text"><%= campaign.content %></p>
+        <span class="stretched-link">read more</span>
 
-<%= link_to 'New Campaign', new_campaign_path %>
+        <div></div>
+        <p>目標<%= number_with_delimiter(campaign.goal, delimiter => ',') %>人のうち<strong>人が賛同しました</strong></p>
+      </div>  
+  </div>
+  <% end %>
+</div>
+
+<button type="button" class="btn btn-secondary btn-lg w-100">もっと見る</button>

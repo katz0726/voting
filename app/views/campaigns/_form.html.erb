@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :goal %>
-    <%= form.number_field :goal %>
+    <%= form.number_field :goal, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '登録する', class: 'btn btn-primary w-100' %>
   </div>
 <% end %>
