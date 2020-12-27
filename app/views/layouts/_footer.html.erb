@@ -1,41 +1,43 @@
 <footer>
-    <div class="row">
-        <div class="col">
-            <div class="list-group content-up-right" style="max-width: 400px;">
-                <h5>change.org会社紹介</h5>
-                <a href="#" class="list-group-item list-group-item-action">インパクト</a>
-                <a href="#" class="list-group-item list-group-item-action">求人募集</a>
-                <a href="#" class="list-group-item list-group-item-action">スタッフ</a>
-            </div>
-        </div>
-        <div class="col">
-            <div class="list-group box-up-left" style="max-width: 400px;">
-                <h5>コミュニティ</h5>
-                <a href="#" class="list-group-item list-group-item-action">日本チームからのお知らせ</a>
-            </div>
-        </div>
-        <div class="w-100 partition"></div>
-        <div class="col">
-            <div class="list-group box-down-right" style="max-width: 400px;">
-                <h5>お問い合わせ</h5>
-                <a href="#" class="list-group-item list-group-item-action">キャンペーンガイド</a>
-                <a href="#" class="list-group-item list-group-item-action">プライバシー</a>
-                <a href="#" class="list-group-item list-group-item-action">ポリシー</a>
-                <a href="#" class="list-group-item list-group-item-action">クッキー</a>
-            </div>
-        </div>
-        
-        <div class="col">
-            <div class="list-group box-down-left" style="max-width: 400px;">
-                <h5>フォローする</h5>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <i class="fab fa-lg fa-twitter sns-icon" style="color:#1DA1F2;"></i>Twitter
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <i class="fab fa-lg fa-facebook-square sns-icon" style="color:#3B5998;"></i>Facebook
-                </a>
-            </div>
-        </div>
-    </div><hr />
-    <p id="copyright">&copy; 2020. Change.org PBC</p>
+  <div class="row">
+    <div class="col">
+      <div class="list-group content-up-right" style="max-width: 400px;">
+        <h5>change.org会社紹介</h5>
+        <%= link_to 'About', page_path('about'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'インパクト', page_path('impact'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to '求人募集', page_path('job_offer'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'スタッフ', page_path('staff'), {class: 'list-group-item list-group-item-action'} %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="list-group box-up-left" style="max-width: 400px;">
+        <h5>コミュニティ</h5>
+        <%= link_to '日本チームからのお知らせ', page_path('notice_jpteam'), {class: 'list-group-item list-group-item-action'} %>
+      </div>
+    </div>
+    <div class="w-100 partition"></div>
+    <div class="col">
+      <div class="list-group box-down-right" style="max-width: 400px;">
+        <h5>サポート</h5>
+        <%= link_to 'お問い合わせ', page_path('inquiry'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'キャンペーンガイド', page_path('campaign_guide'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'プライバシー', page_path('privacy'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'ポリシー', page_path('policy'), {class: 'list-group-item list-group-item-action'} %>
+        <%= link_to 'クッキー', page_path('cookie'), {class: 'list-group-item list-group-item-action'} %>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="list-group box-down-left" style="max-width: 400px;">
+        <h5>フォローする</h5>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="fab fa-lg fa-twitter sns-icon" style="color:#1DA1F2;"></i>Twitter
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="fab fa-lg fa-facebook-square sns-icon" style="color:#3B5998;"></i>Facebook
+        </a>
+      </div>
+    </div>
+  </div><hr />
+  <p id="copyright">&copy; 2020. Change.org PBC</p>
 </footer>
