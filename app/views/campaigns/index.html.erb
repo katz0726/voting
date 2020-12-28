@@ -25,7 +25,7 @@
         <span class="stretched-link">read more</span>
 
         <div></div>
-        <p>目標<%= number_with_delimiter(campaign.goal, delimiter => ',') %>人のうち<strong>人が賛同しました</strong></p>
+        <p>目標<%= number_with_delimiter(campaign.goal) %>人のうち<strong><%= number_with_delimiter(campaign.supporters.count) %>人が賛同しました</strong></p>
       </div>  
   </div>
   <% end %>
