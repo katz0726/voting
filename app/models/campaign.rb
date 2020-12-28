@@ -1,4 +1,5 @@
 class Campaign < ApplicationRecord
-  has_many :tags, dependent: :destroy
-  has_many :supporter, dependent: :destroy
+  has_many :tag_maps, dependent: :destroy
+  has_many :tags, through: :tag_maps
+  has_many :supporters, dependent: :destroy
 end

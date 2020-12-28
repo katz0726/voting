@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  belongs_to :campaign
+  has_many :tag_maps, dependent: :destroy, foreign_key: 'tag_id'
+  has_many :campaigns, through: :tag_maps
 end

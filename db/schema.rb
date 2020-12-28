@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_124143) do
+ActiveRecord::Schema.define(version: 2020_12_28_013101) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "title"
@@ -18,21 +18,29 @@ ActiveRecord::Schema.define(version: 2020_12_07_124143) do
     t.integer "goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "campaign_for"
   end
 
   create_table "supporters", force: :cascade do |t|
     t.integer "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["campaign_id"], name: "index_supporters_on_campaign_id"
   end
 
+  create_table "tag_maps", force: :cascade do |t|
+    t.integer "campaign_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tags", force: :cascade do |t|
-    t.integer "campaign_id"
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaign_id"], name: "index_tags_on_campaign_id"
   end
 
   create_table "tops", force: :cascade do |t|

@@ -9,25 +9,28 @@
     </div>
 
     <!-- 新規キャンペーン -->
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-tag"></i><strong class="focusd-tag">政治</strong>で注目のキャンペーン
-      </div>
+    <% @campaigns.each do |campaign| %>
+      <% campaign.tags.each do |tag| %>
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-tag"></i><strong class="focusd-tag"><%= tag.name %></strong>で注目のキャンペーン
+          </div>
 
-      <div class="card-body">
-        <p class="campaign-for">宛のキャンペーン</p>
-        <h5 class="card-title">テストテストテストテストテストテストテストテストテストテスト</h5>
-        <img src="" class="card-img-right" alt="カードの画像">
-        
-        <p class="card-text">テストテストテストテストテストテストテストテストテストテスト</p>
-      </div>
+          <div class="card-body">
+            <p class="campaign-for"><%= campaign.campaign_for %>宛のキャンペーン</p>
+            <h5 class="card-title"><%= campaign.title %></h5>
+            <img src="" class="card-img-right" alt="カードの画像">
+            
+            <p class="card-text"><%= campaign.content %></p>
+          </div>
 
-      <div class="card-footer">
-        <div class="float-left">山田太郎</div>
-        <div class="float-right">人の賛同者</div>
-      </div>      
-    </div>
-
+          <div class="card-footer">
+            <div class="float-left"><%= campaign.supporters.name %></div>
+            <div class="float-right"><%= campaign.supporters.count %>人の賛同者</div>
+          </div>      
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <%= render 'layouts/sidemenu' %>

@@ -42,6 +42,7 @@ gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 gem 'jquery-rails', '~> 4.4'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'high_voltage', '~> 3.1', '>= 3.1.2'
+gem 'carrierwave', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,7 +63,9 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
+  gem 'cucumber', '~> 5.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

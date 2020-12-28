@@ -4,7 +4,8 @@ class TopsController < ApplicationController
   # GET /tops
   # GET /tops.json
   def index
-    @tops = Top.all
+    @campaigns = Campaign.order(updated_at: 'desc').limit(5)
+    @tags = Tag.all
   end
 
   # GET /tops/1
