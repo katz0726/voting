@@ -10,12 +10,18 @@
       <%= link_to 'キャンペーンを立ち上げる', new_campaign_path, {class: 'nav-link'} %>
     </li>
     <li class="nav-item"><a class="nav-link" href="/mypage">マイページ</a></li>
-    <li class="nav-item"><a class="nav-link" href="/campaigns">キャンペーン一覧</a></li>
+    <li class="nav-item"><%= link_to 'キャンペーン一覧', campaigns_path, {class: 'nav-link'} %></li>
     <li class="nav-item"><a class="nav-link" href="/member">会員プログラム</a></li>
   </ul>
 
   <ul class="navbar-nav">
     <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-    <li class="nav-item"><a class="nav-link" href="/login">ログイン</a></li>
+    <li class="nav-item">
+      <% if user_signed_in? %>
+        <%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %>
+      <% else %>
+        <%= link_to 'サインイン', new_user_session_path, {class: 'nav-link'} %>
+      <% end %>
+    </li>
   </ul>
 </nav>

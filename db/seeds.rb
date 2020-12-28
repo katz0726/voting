@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 6.times do |n|
+  user = User.create!(
+    :email => "hogehoge#{n}@hoge.com",
+    :password => "hugahuga#{n}")
+end
+
+6.times do |n|
   Campaign.create!(
     user_id: n + 1,
     title: "テストタイトル#{n + 1}",
@@ -47,6 +53,7 @@ Supporter.create!(:campaign_id => 3, :user_id => 3)
 Campaign.all.each_with_index do |campaign, i|
   campaign.comments.create!(
     campaign_id: i + 1,
-    user_id: i + 1
+    user_id: i + 1,
+    content: "テストコメント#{i}"
   )
 end

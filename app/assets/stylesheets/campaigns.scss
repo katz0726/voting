@@ -42,9 +42,9 @@ div.page-header {
 ***************************************/
 
 
-
-
-
+/***************************************
+        　　　　　Comments
+***************************************/
 div.comment-area {
   margin-top: 80px;
 }
@@ -52,4 +52,12 @@ div.comment-area {
 div.comment-area-inner {
   padding: 20px 0px;
   border-bottom: $border_color 1px solid; 
+}
+
+/***************************************
+        　　　　　devise
+***************************************/
+div.auth-content-area {
+  width: 70%;
+  margin: 0 auto;
 }
