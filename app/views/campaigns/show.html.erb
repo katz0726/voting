@@ -4,8 +4,16 @@
   <div class="col-md-8">
     <p>発信者: 宛先: <%= @campaign.campaign_for %></p>
 
-    <div>
-      <%= @campaign.content %>
+    <div><%= @campaign.content %></div>
+
+    <div class="comment-area">
+      <h3>賛同者からのコメント</h3>
+      <% @comments.each do |comment| %>
+        <div class="comment-area-inner">
+          <p><strong><%= comment.user_id %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>
+          <div><%= comment.content %></div>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -19,7 +19,7 @@
       </div>
 
       <div class=" card-body col-xs-12 col-sm-8">
-        <h5 class="card-title"><%= campaign.title %></h5>
+        <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
         
         <p class="card-text"><%= campaign.content %></p>
         <span class="stretched-link">read more</span>

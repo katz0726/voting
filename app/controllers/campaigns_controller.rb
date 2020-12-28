@@ -2,15 +2,15 @@ class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   # GET /campaigns
-  # GET /campaigns.json
   def index
     @campaigns = Campaign.all
   end
 
   # GET /campaigns/1
-  # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
+    @comment = Comment.new
+    @comments = @campaign.comments
   end
 
   # GET /campaigns/new
@@ -23,7 +23,6 @@ class CampaignsController < ApplicationController
   end
 
   # POST /campaigns
-  # POST /campaigns.json
   def create
     @campaign = Campaign.new(campaign_params)
 
@@ -39,7 +38,6 @@ class CampaignsController < ApplicationController
   end
 
   # PATCH/PUT /campaigns/1
-  # PATCH/PUT /campaigns/1.json
   def update
     respond_to do |format|
       if @campaign.update(campaign_params)
@@ -53,7 +51,6 @@ class CampaignsController < ApplicationController
   end
 
   # DELETE /campaigns/1
-  # DELETE /campaigns/1.json
   def destroy
     @campaign.destroy
     respond_to do |format|

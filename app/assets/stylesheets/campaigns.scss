@@ -1,5 +1,7 @@
 $bg-color: #f8f9fa;
 
+$border_color: #dbd9db;
+
 /***************************************
         　　　　　共通
 ***************************************/
@@ -7,6 +9,7 @@ h1.page-title {
   width: 100%;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 /***************************************
@@ -37,3 +40,16 @@ div.page-header {
 /***************************************
         　　　　　show
 ***************************************/
+
+
+
+
+
+div.comment-area {
+  margin-top: 80px;
+}
+
+div.comment-area-inner {
+  padding: 20px 0px;
+  border-bottom: $border_color 1px solid; 
+}

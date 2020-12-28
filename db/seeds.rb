@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |n|
-  Campaign.create(
+6.times do |n|
+  Campaign.create!(
     user_id: n + 1,
     title: "テストタイトル#{n + 1}",
     content: "テスト#{n + 1}",
@@ -16,20 +16,37 @@
   )
 end
 
-TagMap.create(:campaign_id => 1, :tag_id => 1)
-TagMap.create(:campaign_id => 2, :tag_id => 2)
-TagMap.create(:campaign_id => 3, :tag_id => 3)
+Campaign.all.each_with_index do |campaign, i|
+  campaign.comments.create!(
+    user_id: i + 1,
+    content: "キャンペーンコメント#{i + 1}"
+  )
+end
 
-Tag.create(:name => '政治')
-Tag.create(:name => '経済')
-Tag.create(:name => 'スポーツ')
-Tag.create(:name => '音楽')
-Tag.create(:name => '娯楽・文化')
-Tag.create(:name => 'テクノロジー')
+Tag.create!(:name => '政治')
+Tag.create!(:name => '経済')
+Tag.create!(:name => 'スポーツ')
+Tag.create!(:name => '音楽')
+Tag.create!(:name => '娯楽・文化')
+Tag.create!(:name => 'テクノロジー')
 
-Supporter.create(:campaign_id => 1, :user_id => 1)
-Supporter.create(:campaign_id => 1, :user_id => 2)
-Supporter.create(:campaign_id => 2, :user_id => 1)
-Supporter.create(:campaign_id => 3, :user_id => 1)
-Supporter.create(:campaign_id => 3, :user_id => 2)
-Supporter.create(:campaign_id => 3, :user_id => 3)
+TagMap.create!(:campaign_id => 1, :tag_id => 1)
+TagMap.create!(:campaign_id => 2, :tag_id => 2)
+TagMap.create!(:campaign_id => 3, :tag_id => 3)
+TagMap.create!(:campaign_id => 4, :tag_id => 4)
+TagMap.create!(:campaign_id => 5, :tag_id => 5)
+TagMap.create!(:campaign_id => 6, :tag_id => 6)
+
+Supporter.create!(:campaign_id => 1, :user_id => 1)
+Supporter.create!(:campaign_id => 1, :user_id => 2)
+Supporter.create!(:campaign_id => 2, :user_id => 1)
+Supporter.create!(:campaign_id => 3, :user_id => 1)
+Supporter.create!(:campaign_id => 3, :user_id => 2)
+Supporter.create!(:campaign_id => 3, :user_id => 3)
+
+Campaign.all.each_with_index do |campaign, i|
+  campaign.comments.create!(
+    campaign_id: i + 1,
+    user_id: i + 1
+  )
+end
