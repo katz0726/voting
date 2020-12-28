@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="row page-header">
+  <span class="h5"><i class="fas fa-tag"></i>トピック</span>
+  <h1 style="display: block;"><%= @tag.name %></h1>
+  <strong><%= @campaigns.count %></strong>件のキャンペーン
+  <div class="tag-follow-button"></div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @campaign.title %>
-</p>
+<div class="row">
+  <div class="col-md-9 latest-campaigns-area">
+    <p class="latest-campaign-header">
+      <span style="border-bottom:#ec2c22 2px solid;">最新のキャンペーン</span>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @campaign.content %>
-</p>
-
-<p>
-  <strong>Goal:</strong>
-  <%= @campaign.goal %>
-</p>
-
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
+    <%= render 'campaign_card' %>
+  </div>
+</div>

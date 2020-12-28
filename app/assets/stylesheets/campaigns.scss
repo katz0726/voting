@@ -8,3 +8,19 @@ h1.page-title {
 div.campaign-list {
   background-color: $bg-color;
 }
+
+div.latest-campaigns-area {
+  margin: 0 auto;
+}
+
+p.latest-campaign-header {
+  font-weight: bolder;
+  color: #ec2c22;
+  border-bottom:#dbd9db 1px solid;
+}
+
+div.page-header {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
