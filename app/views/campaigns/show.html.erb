@@ -1,16 +1,19 @@
-<div class="row page-header">
-  <span class="h5"><i class="fas fa-tag"></i>トピック</span>
-  <h1 style="display: block;"><%= @tag.name %></h1>
-  <strong><%= @campaigns.count %></strong>件のキャンペーン
-  <div class="tag-follow-button"></div>
-</div>
-
 <div class="row">
-  <div class="col-md-9 latest-campaigns-area">
-    <p class="latest-campaign-header">
-      <span style="border-bottom:#ec2c22 2px solid;">最新のキャンペーン</span>
-    </p>
+  <h1 class="page-title"><%= @campaign.title %></h1>
 
-    <%= render 'campaign_card' %>
+  <div class="col-md-8">
+    <p>発信者: 宛先: <%= @campaign.campaign_for %></p>
+
+    <div>
+      <%= @campaign.content %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div>
+      <strong><%= delimited_by_comma(@campaign.supporters.count) %>人が賛同しました。</strong>もう少しで
+      <%= delimited_by_comma(@campaign.goal) %>人に到達します！
+
+    </div><hr/>
   </div>
 </div>

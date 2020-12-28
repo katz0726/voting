@@ -10,8 +10,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
-    @tag = Tag.find(params[:id])
-    @campaigns = Campaign.includes(:tags).where("tags.id": params[:id]).references(:tags).order(updated_at: 'desc')
+    @campaign = Campaign.find(params[:id])
   end
 
   # GET /campaigns/new

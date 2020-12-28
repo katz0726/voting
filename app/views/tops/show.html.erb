@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="row page-header">
+  <span class="h5"><i class="fas fa-tag"></i>トピック</span>
+  <h1 style="display: block;"><%= @tag.name %></h1>
+  <strong><%= delimited_by_comma(@campaigns.count) %></strong>件のキャンペーン
+  <div class="tag-follow-button"></div>
+</div>
 
-<%= link_to 'Edit', edit_top_path(@top) %> |
-<%= link_to 'Back', tops_path %>
+<div class="row">
+  <div class="col-md-9 latest-campaigns-area">
+    <p class="latest-campaign-header">
+      <span style="border-bottom:#ec2c22 2px solid;">最新のキャンペーン</span>
+    </p>
+
+    <%= render 'campaign_card' %>
+  </div>
+</div>

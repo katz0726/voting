@@ -2,76 +2,81 @@ $title_color:  #ec2c22;
 $header_color: #737273;
 $footer_bgcolor: #efefef;
 
+$icon_color: #dbd9db;
+
 /***************************************
         　　　　　共通
 ***************************************/
 html, body {
-    font-size: 14px;
-    font-family: 'メイリオ';
-    margin: 0px;
-    padding: 0px;
-
+  font-size: 14px;
+  font-family: 'メイリオ';
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
-    font-size: 92px;
-    font-weight: bolder;
+  font-size: 92px;
+  font-weight: bolder;
 }
 
 h3 {
-    font-size: 14px;
-    font-weight: bold;
-    color: $header_color;
+  font-size: 14px;
+  font-weight: bold;
+  color: $header_color;
 }
 
 h4 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 /***************************************
         　　　　　固有
 ***************************************/
 div.container {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 #header-title {
-    color: $title_color;
-    font-weight: bold;
-    font-size: 1.75rem !important;
+  color: $title_color;
+  font-weight: bold;
+  font-size: 1.75rem !important;
 }
 
 footer {
-    height: 500px;
-    margin-top: 80px;
-    padding: 30px 120px 10px 120px;
-    background-color: #efefef;
-
-    h5 {
-        font-size: 14px;
-        font-weight: bold;
-        color: $header_color;
-    }
-
-    .list-group-item {
-        background-color: $footer_bgcolor;
-        border: none;
-    }
-
-    .partition {
-        margin-bottom: 30px;
-    }
-
-    p#copyright {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .sns-icon {
-        margin-right: 10px;
-    }
+  height: 500px;
+  margin-top: 80px;
+  padding: 30px 120px 10px 120px;
+  background-color: #efefef;
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: $header_color;
+  }
+  .list-group-item {
+    background-color: $footer_bgcolor;
+    border: none;
+  }
+  .partition {
+    margin-bottom: 30px;
+  }
+  p#copyright {
+    margin: 0px;
+    padding: 0px;
+  }
+  .sns-icon {
+    margin-right: 10px;
+  }
 }
+
+span.help-icon {
+  margin-left: 5px;
+
+  .help-icon {
+    color: $icon_color;
+  }
+}
+
