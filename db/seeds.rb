@@ -8,6 +8,9 @@
 
 6.times do |n|
   user = User.create!(
+    :username_last => "一般",
+    :username_first => "ユーザ#{n}",
+    :gender => rand(1..2),
     :email => "hogehoge#{n}@hoge.com",
     :password => "hugahuga#{n}")
 end

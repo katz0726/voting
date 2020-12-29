@@ -9,7 +9,7 @@
     <li class="nav-item active">
       <%= link_to 'キャンペーンを立ち上げる', new_campaign_path, {class: 'nav-link'} %>
     </li>
-    <li class="nav-item"><a class="nav-link" href="/mypage">マイページ</a></li>
+    <li class="nav-item"><%= link_to 'マイページ', page_path('mypage'), {class: 'nav-link'} %></li>
     <li class="nav-item"><%= link_to 'キャンペーン一覧', campaigns_path, {class: 'nav-link'} %></li>
     <li class="nav-item"><a class="nav-link" href="/member">会員プログラム</a></li>
   </ul>

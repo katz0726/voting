@@ -2,7 +2,10 @@
   <h1 class="page-title"><%= @campaign.title %></h1>
 
   <div class="col-md-8">
-    <p>発信者: 宛先: <%= @campaign.campaign_for %></p>
+    <p>
+      発信者: <%= format_username(@campaign.user.username_last, @campaign.user.username_first) %>&ensp;
+      宛先: <%= @campaign.campaign_for %>
+    </p>
 
     <div><%= @campaign.content %></div>
 
@@ -10,7 +13,7 @@
       <h3>賛同者からのコメント</h3>
       <% @comments.each do |comment| %>
         <div class="comment-area-inner">
-          <p><strong><%= comment.user_id %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>
+          <p><strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>
           <div><%= comment.content %></div>
         </div>
       <% end %>
