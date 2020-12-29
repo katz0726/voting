@@ -1,0 +1,72 @@
+ja:
+  common/crud: &default_option
+    index:
+      title: 一覧
+    show:
+      title: 参照
+    new:
+      title: 追加
+    create:
+      title: 登録する
+    edit:
+      title: 編集
+    update:
+      title: 更新
+    destroy:
+      title: 削除する
+    readmore:
+      title: もっと見る
+
+  header:
+    self:
+      start_campaign: キャンペーンを立ち上げる
+      mypage: マイページ
+      campaign_list: キャンペーン一覧
+      member_program: 会員プログラム
+      signin: サインイン
+      signout: サインアウト
+    <<: *default_option
+  
+  sidemenu:
+    self:
+      title: トピック
+    <<: *default_option
+
+  footer:
+    self:
+      introduction:
+        title: change.org会社紹介
+        about: About
+        impact: インパクト
+        joboffer: 求人募集
+        staff: スタッフ
+      support:
+        title: サポート
+        inquiry: お問い合わせ
+        guide: キャンペーンガイド
+        privacy: プライバシー
+        policy: ポリシー
+        cookie: クッキー
+      community:
+        title: コミュニティ
+        notice: 日本チームからのお知らせ
+      follow:
+        title: フォローする
+        twitter: Twitter
+        facebook: Facebook
+    <<: *default_option
+  top:
+    self:
+      title: みんなで世界を変えよう！
+    <<: *default_option
+  campaign:
+    self:
+      title: キャンペーン一覧
+      startup_campaign_title: どのトピックでキャンペーンを立ち上げますか？
+      startup_campaign_sentence: トピックを選択いただくと、関心のありそうな方にあなたのキャンペーンを表示することができます
+      comment_from_supporter: 賛同者からのコメント
+      sender: 発信者
+      destination: 宛先
+      sub_title: トピック
+      latest_campaign: 最新のキャンペーン
+    <<: *default_option

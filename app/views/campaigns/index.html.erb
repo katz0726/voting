@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="page-title">賛同できるキャンペーン一覧</h1><br>
+<h1 class="page-title"><%= Campaign.human_attribute_name :campaign_list %></h1><br>
 
 <ul class="nav nav-tabs">
-  <li class="nav-item"><%= link_to '注目', campaigns_path, {class: 'nav-link active'} %></li>
-  <li class="nav-item"><%= link_to '人気', campaigns_path(condition: 'popular'), {class: 'nav-link'} %></li>
-  <li class="nav-item"><%= link_to '最新', campaigns_path(condition: 'latest'), {class: 'nav-link'} %></li>
-  <li class="nav-item"><%= link_to '成功事例', campaigns_path(condition: 'succeed'), {class: 'nav-link'} %></li>
+  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_attention}", campaigns_path, {class: 'nav-link active'} %></li>
+  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_popular}", campaigns_path(condition: 'popular'), {class: 'nav-link'} %></li>
+  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_latest}", campaigns_path(condition: 'latest'), {class: 'nav-link'} %></li>
+  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_succeed}", campaigns_path(condition: 'succeed'), {class: 'nav-link'} %></li>
 </ul>
 
 <!-- 新規キャンペーン -->
@@ -25,10 +25,13 @@
         <span class="stretched-link">read more</span>
 
         <div></div>
-        <p>目標<%= delimited_by_comma(campaign.goal) %>人のうち<strong><%= delimited_by_comma(campaign.supporters.count) %>人が賛同しました</strong></p>
+        <p>
+          目標<%= delimited_by_comma(campaign.goal) %>人のうち
+          <strong><%= delimited_by_comma(campaign.supporters.count) %>人が賛同しました</strong>
+        </p>
       </div>  
   </div>
   <% end %>
 </div>
 
-<button type="button" class="btn btn-secondary btn-lg w-100">もっと見る</button>
+<button type="button" class="btn btn-secondary btn-lg w-100"><%= t('common/crud.readmore.title')%></button>

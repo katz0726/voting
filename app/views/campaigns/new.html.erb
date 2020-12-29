@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-7 latest-campaigns-area">
-    <h1 class="page-title">どのトピックでキャンペーンを立ち上げますか？</h1>
+    <h1 class="page-title"><%= t('campaign.self.startup_campaign_title') %></h1>
 
-    <p>トピックを選択いただくと、関心のありそうな方にあなたのキャンペーンを表示することができます</p>
+    <p><%= t('campaign.self.startup_campaign_sentence') %></p>
 
     <%= render 'form', campaign: @campaign %>
   </div>

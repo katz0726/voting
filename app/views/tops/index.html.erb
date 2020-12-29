@@ -2,8 +2,8 @@
   <div class="col-md-9">
     <!-- トップコンテンツ -->
     <div class="top-content-area">
-      <h1>みんなで世界を変えよう！</h1>
-      <p>人が参加しています</p>
+      <h1><%= t('top.self.title') %></h1>
+      <p><%= delimited_by_comma(@user_count) %>人が参加しています</p>
       <p><%= link_to 'みんなで社会を動かすしくみ', campaigns_path, class: 'start-campaign-link' %></p>
       <%= link_to 'キャンペーンを立ち上げる', new_campaign_path, {class: 'btn btn-primary btn-lg'}%>
     </div>

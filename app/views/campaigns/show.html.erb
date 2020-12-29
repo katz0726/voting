@@ -3,14 +3,14 @@
 
   <div class="col-md-8">
     <p>
-      発信者: <%= format_username(@campaign.user.username_last, @campaign.user.username_first) %>&ensp;
-      宛先: <%= @campaign.campaign_for %>
+      <%= t('campaign.self.sender') %>: <%= format_username(@campaign.user.username_last, @campaign.user.username_first) %>&ensp;
+      <%= t('campaign.self.destination'): <%= @campaign.campaign_for %>
     </p>
 
     <div><%= @campaign.content %></div>
 
     <div class="comment-area">
-      <h3>賛同者からのコメント</h3>
+      <h3><%= t('campaign.self.comment_from_supporter') %></h3>
       <% @comments.each do |comment| %>
         <div class="comment-area-inner">
           <p><strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>

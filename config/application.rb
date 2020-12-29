@@ -15,6 +15,17 @@ module Voting
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    # load /lib directory
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib/voting)
+    
+    config.time_zone = "Tokyo"
+    config.active_record_default_timezone = :local
+    
+    config.i18n.available_locales = [:en, :ja]
+    config.i18n.enforce_available_locales = true
     config.i18n.default_locale = :ja
+
+
   end
 end
