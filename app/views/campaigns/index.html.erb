@@ -3,7 +3,7 @@
 <h1 class="page-title">賛同できるキャンペーン一覧</h1><br>
 
 <ul class="nav nav-tabs">
-  <li class="nav-item"><%= link_to '注目', campaigns_path(condition: 'attend'), {class: 'nav-link active'} %></li>
+  <li class="nav-item"><%= link_to '注目', campaigns_path, {class: 'nav-link active'} %></li>
   <li class="nav-item"><%= link_to '人気', campaigns_path(condition: 'popular'), {class: 'nav-link'} %></li>
   <li class="nav-item"><%= link_to '最新', campaigns_path(condition: 'latest'), {class: 'nav-link'} %></li>
   <li class="nav-item"><%= link_to '成功事例', campaigns_path(condition: 'succeed'), {class: 'nav-link'} %></li>

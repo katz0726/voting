@@ -1,0 +1,3 @@
+module ApplicationConst
+  
+end

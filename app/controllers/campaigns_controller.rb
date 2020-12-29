@@ -4,7 +4,11 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns
   def index
-    @campaigns = Campaign.all
+    if params[:condition].present?
+      @campaigns = Campaign.search(params[:condition])
+    else
+      @campaigns = Campaign.all.order(updated_at: 'desc')
+    end
   end
 
   # GET /campaigns/1
