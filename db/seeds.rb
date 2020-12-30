@@ -57,6 +57,6 @@ Campaign.all.each_with_index do |campaign, i|
   campaign.comments.create!(
     campaign_id: i + 1,
     user_id: i + 1,
-    content: "テストコメント#{i}"
+    content: "テストコメント#{i + 1}"
   )
 end

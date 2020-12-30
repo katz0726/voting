@@ -5,9 +5,10 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   def index
     if params[:condition].present?
-      @campaigns = Campaign.search(params[:condition])
+      result = Campaign.search(params[:condition])
+      @campaigns = Kaminari.paginate_array(result).page(params[:page])
     else
-      @campaigns = Campaign.all.order(updated_at: 'desc')
+      @campaigns = Campaign.all.order(updated_at: 'desc').page(params[:page])
     end
   end
 

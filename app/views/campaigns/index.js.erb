@@ -1,0 +1,7 @@
+$("#campaign_list").append(
+  "<%= escape_javascript(render 'campaign_list', object: @campaigns) %>"
+);
+
+$("#view_more").replaceWith(
+  "<%= escape_javascript(link_to_next_page(@campaigns, "#{t('common/crud.readmore.title')}", remote: true, class: "btn btn-secondary btn-lg w-100", id: "view_more")) %>"
+);

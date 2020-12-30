@@ -58,6 +58,8 @@ ja:
   top:
     self:
       title: みんなで世界を変えよう！
+      sub_title: トピック
+      latest_campaign: 最新のキャンペーン
     <<: *default_option
   campaign:
     self:
@@ -67,6 +69,4 @@ ja:
       comment_from_supporter: 賛同者からのコメント
       sender: 発信者
       destination: 宛先
-      sub_title: トピック
-      latest_campaign: 最新のキャンペーン
     <<: *default_option
