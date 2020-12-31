@@ -6,12 +6,11 @@ class User < ApplicationRecord
     
   has_many :campaigns, dependent: :destroy
   has_many :comments, dependent: :destroy
-
   has_many :supporters
   has_many :supported_campaigns, through: :supporters, source: :campaign
 
-  validates :username_last, presence:true
-  validates :username_first, presence:true
+  validates :username_last, presence: {message: 'を入力してください' }
+  validates :username_first, presence:{message: 'を入力してください' }
 
   def already_liked?(campaign)
     self.supporters.exists?(campaign_id: campaign.id)

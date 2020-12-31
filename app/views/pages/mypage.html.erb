@@ -1,1 +1,12 @@
-<p>my page</p>
+<h1>my page</h1>
+
+<dl>
+  <dt>氏名</dt>
+  <dd><%= format_username(current_user.username_last, current_user.username_first) %></dd>
+
+  <dt>性別</dt>
+  <dd><%= VotingConst::GENDER[current_user.gender] %></dd>
+
+  <dt>Email</dt>
+  <dd><%= current_user.email %></dd>
+</dl>

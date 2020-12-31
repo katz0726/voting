@@ -16,6 +16,8 @@ ja:
       title: 削除する
     readmore:
       title: もっと見る
+    search:
+      title: 検索する
 
   header:
     self:

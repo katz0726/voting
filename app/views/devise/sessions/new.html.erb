@@ -1,5 +1,5 @@
 <div class="auth-content-area">
-  <h2>サインイン</h2>
+  <h2><%= t('devise.sessions.new.sign_in') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group field">
@@ -20,7 +20,7 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "登録する", class: 'btn btn-primary w-100' %>
+      <%= f.submit "#{t('devise.sessions.new.sign_in')}", class: 'btn btn-primary w-100' %>
     </div>
   <% end %>
 

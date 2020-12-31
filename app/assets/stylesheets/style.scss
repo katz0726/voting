@@ -73,6 +73,7 @@ footer {
 }
 
 span.help-icon {
+  position: relative;
   margin-left: 5px;
 
   .help-icon {
@@ -80,3 +81,35 @@ span.help-icon {
   }
 }
 
+/** 吹き出し */
+p.bubble {
+  display: none;
+  width: 200px;
+  position: absolute;
+  top: -30px;
+  left: 35px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+}
+
+p.bubble:after {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: -20px;
+  top: 27px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+.help-icon:hover > .bubble {
+  display: block;
+}
