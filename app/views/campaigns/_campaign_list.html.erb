@@ -1,20 +1,21 @@
 <% @campaigns.each do |campaign| %>
   <div class="card">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <div class="col-sm-4">
         <img src="" class="card-img-right" alt="カードの画像">
       </div>
-      <div class=" card-body col-xs-12 col-sm-8">
+      <div class="col-sm-8">
         <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
-        
         <p class="card-text"><%= campaign.content %></p>
-        <span class="stretched-link">read more</span>
+        <span>read more</span>
+
         <div></div>
         <p>
           目標<%= delimited_by_comma(campaign.goal) %>人のうち
           <strong><%= delimited_by_comma(campaign.supporters.count) %>人が賛同しました</strong>
         </p>
       </div>
-    </div>    
+    </div>
   </div>
 <% end %>

@@ -10,7 +10,9 @@
 </ul>
 
 <!-- 新規キャンペーン -->
-<div class="campaign-list"><%= render 'campaign_list' %></div>
+<div class="campaign-list">
+  <%= render 'campaign_list' %>
+
   <div class="more">
     <%= link_to_next_page @campaigns, "#{t('common/crud.readmore.title')}",
       remote: true, class: "btn btn-secondary btn-lg w-100", id: "view_more" %>

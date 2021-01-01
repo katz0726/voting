@@ -52,7 +52,7 @@ div.comment-area {
 
   div.comment-lists {
     height: 320px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     div.comment-area-inner {
       padding: 20px 0px;
