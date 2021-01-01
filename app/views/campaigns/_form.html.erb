@@ -1,32 +1,21 @@
 <% if @campaign.errors.any? %>
   <div>
-    <ul style="color: red">
-      <% @campaign.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+    <% @campaign.errors.full_messages.each do |message| %>
+      <p class="error-message">
+        <span class="message-icon"><i class="fas fa-times-circle"></i></span>
+        <%= message %>
+      </p>
+    <% end %>
   </div>
 <% end %>
 
 <%= form_with(model: campaign, local: true) do |form| %>
-  <%= debug current_user.inspect %>
-
-  <% if campaign.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
-
-      <ul>
-      <% campaign.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form.hidden_field :user_id, :value =>  current_user.id %>
 
   <div class="form-group field">
     <%= form.label :title %>
     <span id="help-icon-title" class="help-icon">
-      <i class="far fa-question-circle"></i>
+      <i class="far fa-question-circle message-icon"></i>
       <p id="title-bubble" class="bubble">bb</p>
     </span>
     <%= form.text_field :title, class: 'form-control' %>
@@ -45,6 +34,11 @@
   <div class="form-group field">
     <%= form.label :goal %>
     <%= form.text_field :goal, class: 'form-control' %>
+  </div>
+
+  <div class="form-group field">
+    <%= form.label :campaign_for %>
+    <%= form.text_field :campaign_for, class: 'form-control' %>
   </div>
 
   <div class="form-group field">

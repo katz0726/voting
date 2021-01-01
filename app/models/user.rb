@@ -5,7 +5,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable, :trackable
     
   has_many :campaigns, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments
   has_many :supporters
   has_many :supported_campaigns, through: :supporters, source: :campaign
 

@@ -15,9 +15,9 @@ h1.page-title {
 /***************************************
         　　　　　一覧
 ***************************************/
-div.campaign-list {
-  background-color: $bg-color;
-}
+// div.campaign-list {
+//   background-color: $bg-color;
+// }
 
 div.latest-campaigns-area {
   margin: 0 auto;
@@ -35,23 +35,30 @@ div.page-header {
   text-align: center;
 }
 
-
-
-/***************************************
-        　　　　　show
-***************************************/
-
-
 /***************************************
         　　　　　Comments
 ***************************************/
 div.comment-area {
   margin-top: 80px;
-}
 
-div.comment-area-inner {
-  padding: 20px 0px;
-  border-bottom: $border_color 1px solid; 
+  div.comment-form {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  
+    .comment-tarea {
+      height: 150px !important;
+    }
+  }
+
+  div.comment-lists {
+    height: 320px;
+    overflow-y: scroll;
+
+    div.comment-area-inner {
+      padding: 20px 0px;
+      border-bottom: $border_color 1px solid; 
+    }
+  }
 }
 
 /***************************************

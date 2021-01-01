@@ -1,21 +1,23 @@
 class CampaignsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /campaigns
   def index
     if params[:condition].present?
-      result = Campaign.search(params[:condition])
+      result = Campaign.includes(:tags).search(params[:condition])
       @campaigns = Kaminari.paginate_array(result).page(params[:page])
     else
-      @campaigns = Campaign.all.order(updated_at: 'desc').page(params[:page])
+      @campaigns = Campaign.all.includes(:tags).order(updated_at:'desc').page(params[:page])
     end
+
+    render :index
   end
 
   # GET /campaigns/1
   def show
     @campaign = Campaign.find(params[:id])
+    @comments = @campaign.comments.order(updated_at: :desc)
     @comment = Comment.new
-    @comments = @campaign.comments
   end
 
   # GET /campaigns/new
@@ -31,13 +33,13 @@ class CampaignsController < ApplicationController
 
   # POST /campaigns
   def create
-    @campaign = Campaign.new(campaign_params)
+    @campaign = current_user.campaigns.build(campaign_params)
 
-    if @campaign.save!
-      action_name = 
-      flash[:notice] = t("notice.messages.save_completed")
-      redirect_to campaigns_url
+    if @campaign.save
+      flash[:notice] = t("activerecord.notices.messages.save_completed", :action_name => '登録')
+      redirect_to root_url
     else
+      flash.now[:error] = t("activerecord.errors.messages.save_failed", :action_name => '登録')
       render :new
     end
   end
@@ -54,9 +56,7 @@ class CampaignsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def campaign_params
       params.require(:campaign).permit(
-        :title, :content, :goal, tags_attributes: [
-          :name
-        ]
+        :title, :content, :goal, :campaign_for, :user_id, tags_attributes: [:name]
       )
     end
 end

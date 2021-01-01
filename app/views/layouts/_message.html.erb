@@ -1,7 +1,13 @@
 <% if notice.present? %>
-  <p><%= notice %></p>
+  <p class="notice-message">
+    <span class="message-icon"><i class="fas fa-check-circle"></i></span>
+    <%= notice %>
+  </p>
 <% end %>
 
 <% if alert.present? %>
-  <p><%= alert %></p>
+  <p class="error-message">
+    <span class="message-icon"><i class="fas fa-times-circle"></i></span>
+    <%= alert %>
+  </p>
 <% end %>

@@ -1,21 +1,22 @@
 <!-- 新規キャンペーン -->
 <% @campaigns.each do |campaign| %>
-  <% campaign.tags.each do |tag| %>
-    <div class="card">
-      <div class="card-header">
-        <i class="fas fa-tag"></i><strong class="focusd-tag"><%= tag.name %></strong>で注目のキャンペーン
-      </div>
-      <div class="card-body">
-        <p class="campaign-for"><%= campaign.campaign_for %>宛のキャンペーン</p>
-        <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
-        <img src="" class="card-img-right" alt="カードの画像">
-        
-        <p class="card-text"><%= campaign.content %></p>
-      </div>
-      <div class="card-footer">
-        <div class="float-left"><%= format_username(campaign.user.username_last, campaign.user.username_first) %></div>
-        <div class="float-right"><%= delimited_by_comma(campaign.supporters.count) %>人の賛同者</div>
-      </div>      
+  <div class="card">
+    <div class="card-header">
+      <% campaign.tags.each do |tag| %>
+        <i class="fas fa-tag"></i>
+        <strong class="focusd-tag"><%= tag.name %></strong>で注目のキャンペーン
+      <% end %>  
     </div>
-  <% end %>
+    <div class="card-body">
+      <p class="campaign-for"><%= campaign.campaign_for %>宛のキャンペーン</p>
+      <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
+      <img src="" class="card-img-right" alt="カードの画像">
+      
+      <p class="card-text"><%= campaign.content %></p>
+    </div>
+    <div class="card-footer">
+      <div class="float-left"><%= format_username(campaign.user.username_last, campaign.user.username_first) %></div>
+      <div class="float-right"><%= delimited_by_comma(campaign.supporters.count) %>人の賛同者</div>
+    </div>      
+  </div>
 <% end %>

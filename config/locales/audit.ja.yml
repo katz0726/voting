@@ -18,6 +18,8 @@ ja:
       title: もっと見る
     search:
       title: 検索する
+    comment:
+      title: コメントする
 
   header:
     self:

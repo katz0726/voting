@@ -51,6 +51,7 @@ footer {
   margin-top: 80px;
   padding: 30px 120px 10px 120px;
   background-color: #efefef;
+
   h5 {
     font-size: 14px;
     font-weight: bold;
@@ -112,4 +113,25 @@ p.bubble:after {
 
 .help-icon:hover > .bubble {
   display: block;
+}
+
+/** メッセージ */
+.notice-message {
+  background-color: #28a745;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin: 30px 0px;
+}
+
+.error-message {
+  background-color: #ec2c22;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin: 30px 0px;
+}
+
+.message-icon {
+  margin-right: 10px;
 }

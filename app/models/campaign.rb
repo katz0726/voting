@@ -5,11 +5,14 @@ class Campaign < ApplicationRecord
   has_many :tags, through: :tag_maps
   has_many :supporters, dependent: :destroy
   has_many :supported_users, through: :supporters, source: :user
-  has_many :comments, dependent: :destroy
+  has_many :comments
+
+  accepts_nested_attributes_for :tags
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :goal, presence: true
+  validates :goal, presence: true, numericality: {only_integer: true}
+  validates :campaign_for, presence: true
 
   def self.search(condition)
     return Campaign.all unless condition

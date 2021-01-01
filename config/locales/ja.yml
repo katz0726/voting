@@ -1,7 +1,11 @@
 ja:
   activerecord:
+    notices:
+      messages:
+        save_completed: "%{action_name}が完了しました"
     errors:
       messages:
+        save_failed: "%{action_name}に失敗しました"
         input_abscent: を入力してください
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
@@ -9,6 +13,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       camapaign:
+      tag:
     attributes:
       campaign:
         campaign_list: 賛同できるキャンペーン一覧
@@ -20,6 +25,8 @@ ja:
         search_popular: 人気
         search_latest: 最新
         search_succeed: 成功事例
+      tag:
+        name: タグ
   date:
     abbr_day_names:
     - 日

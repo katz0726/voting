@@ -11,12 +11,22 @@
 
     <div class="comment-area">
       <h3><%= t('campaign.self.comment_from_supporter') %></h3>
-      <% @comments.each do |comment| %>
-        <div class="comment-area-inner">
-          <p><strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>
-          <div><%= comment.content %></div>
-        </div>
-      <% end %>
+
+      <div class="form-group field comment-form">
+        <%= form_for [@campaign, @comment] do |form| %>
+          <%= form.text_area :content, class: 'form-control comment-tarea' %><br>
+          <%= form.submit "#{t('common/crud.comment.title')}", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+
+      <div class="comment-lists">
+        <% @comments.each do |comment| %>
+          <div class="comment-area-inner">
+            <p><strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %></p>
+            <div><%= comment.content %></div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
