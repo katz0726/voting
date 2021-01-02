@@ -16,8 +16,13 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1
   def show
     @campaign = Campaign.find(params[:id])
+
     @comments = @campaign.comments.order(updated_at: :desc)
     @comment = Comment.new
+
+    @supported_flg = Supporter.exists?(:campaign_id => params[:id], :user_id => current_user.id)
+    @supporters = @campaign.supporters.order(updated_at: :desc)
+    @supporter = @campaign.supporters.build
   end
 
   # GET /campaigns/new

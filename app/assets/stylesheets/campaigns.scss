@@ -62,6 +62,22 @@ div.comment-area {
 }
 
 /***************************************
+        　　　　　Supports
+***************************************/
+div.supporter-lists {
+  height: 135px;
+  overflow-y: auto;
+}
+
+.supporter-form {
+  .btn-support {
+    border: none !important;
+    background-color: #ec2c22 !important;
+  }
+}
+
+
+/***************************************
         　　　　　devise
 ***************************************/
 div.auth-content-area {

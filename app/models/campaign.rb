@@ -11,7 +11,7 @@ class Campaign < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :goal, presence: true, numericality: {only_integer: true}
+  validates :goal, presence: true, numericality: {only_integer: true, :greater_than => 0}
   validates :campaign_for, presence: true
 
   def self.search(condition)

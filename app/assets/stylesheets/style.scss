@@ -33,6 +33,11 @@ ul {
   list-style: none;
 }
 
+input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
 /***************************************
         　　　　　固有
 ***************************************/
@@ -134,4 +139,8 @@ p.bubble:after {
 
 .message-icon {
   margin-right: 10px;
+}
+
+li.list-group-item {
+  border: none;
 }

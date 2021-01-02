@@ -32,9 +32,39 @@
 
   <div class="col-md-4">
     <div>
-      <strong><%= delimited_by_comma(@campaign.supporters.count) %>人が賛同しました。</strong>もう少しで
-      <%= delimited_by_comma(@campaign.goal) %>人に到達します！
+      <%= render 'goal_progress'%>
+
+      <div></div>
+      <div class="supporter-lists">
+        <ul class="list-group">
+          <% @supporters.each do |supporter| %>
+            <li class="list-group-item">
+              <% if supporter.visible == true %>
+                <%== "#{format_username(supporter.user.username_last, supporter.user.username_first)}
+                  さんが #{time_ago supporter.updated_at}前 に賛同しました" %>
+              <% else %>
+                <%== "匿名ユーザさんが #{time_ago supporter.updated_at}前 に賛同しました" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
 
     </div><hr/>
+
+    <div class="form-group field supporter-form">
+      <%= form_with model: [@campaign, @supporter] do |form| %>
+        <%= form.label :visible do %>
+          <%= form.check_box :visible, {class: 'form-control'}, 1, 0 %>
+          <span>賛同した際、自分のアカウント情報及びコメントを表示させる</span>
+        <% end %>
+
+        <% if @supported_flg %>
+          <%= form.submit "#{t('common/crud.already_supported.title')}", class: 'btn btn-primary disabled w-100 btn-support' %>
+        <% else %>
+          <%= form.submit "#{t('common/crud.support.title')}", class: 'btn btn-primary w-100 btn-support' %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

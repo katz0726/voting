@@ -1,0 +1,23 @@
+<%
+  # devide by zeroを考慮
+  if @campaign.supporters.count == 0
+    progress_percent = 0
+  else
+    progress_percent = (@campaign.supporters.count / @campaign.goal).ceil * 100
+  end
+%>
+
+<% if progress_percent >= 100  %>
+  <span><%= @campaign.supporters.count %>人の賛同者により成功に導かれました</span>
+<% elsif progress_percent >= 80 %>
+  <strong><%= delimited_by_comma(@campaign.supporters.count) %>人が賛同しました。</strong>
+  <span>もう少しで<%= delimited_by_comma(@campaign.goal) %>人に到達します！</span>
+<% elsif progress_percent >= 60 %>
+  <strong><%= delimited_by_comma(@campaign.supporters.count) %>人が賛同しました。</strong>
+  <span>目標は<%= delimited_by_comma(@campaign.goal) %>人です。その調子です！</span>
+<% elsif progress_percent == 0 %>
+  <span>目標は<%= delimited_by_comma(@campaign.goal) %>人です。頑張って賛同者を募りましょう！</span>
+<% else %>
+  <strong><%= delimited_by_comma(@campaign.supporters.count) %>人が賛同しました。</strong>
+  <span>目標は<%= delimited_by_comma(@campaign.goal) %>人です。頑張って賛同者を募りましょう！</span>
+<% end %>

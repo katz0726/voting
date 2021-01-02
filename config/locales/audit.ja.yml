@@ -20,7 +20,10 @@ ja:
       title: 検索する
     comment:
       title: コメントする
-
+    support:
+      title: 賛同する
+    already_supported:
+      title: 賛同済み
   header:
     self:
       start_campaign: キャンペーンを立ち上げる

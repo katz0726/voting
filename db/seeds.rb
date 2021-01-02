@@ -11,7 +11,7 @@
     :username_last => "一般",
     :username_first => "ユーザ#{n + 1}",
     :gender => rand(1..2),
-    :email => "hogehoge#{n}@hoge.com",
+    :email => "hogehoge#{n + 1}@hoge.com",
     :password => "hugahuga#{n + 1}")
 end
 
@@ -46,12 +46,12 @@ TagMap.create!(:campaign_id => 4, :tag_id => 4)
 TagMap.create!(:campaign_id => 5, :tag_id => 5)
 TagMap.create!(:campaign_id => 6, :tag_id => 6)
 
-Supporter.create!(:campaign_id => 1, :user_id => 1)
-Supporter.create!(:campaign_id => 1, :user_id => 2)
-Supporter.create!(:campaign_id => 2, :user_id => 1)
-Supporter.create!(:campaign_id => 3, :user_id => 1)
-Supporter.create!(:campaign_id => 3, :user_id => 2)
-Supporter.create!(:campaign_id => 3, :user_id => 3)
+Supporter.create!(:campaign_id => 1, :user_id => 1, :visible => 0)
+Supporter.create!(:campaign_id => 1, :user_id => 2, :visible => 0)
+Supporter.create!(:campaign_id => 2, :user_id => 1, :visible => 0)
+Supporter.create!(:campaign_id => 3, :user_id => 1, :visible => 0)
+Supporter.create!(:campaign_id => 3, :user_id => 2, :visible => 1)
+Supporter.create!(:campaign_id => 3, :user_id => 3, :visible => 1)
 
 Campaign.all.each_with_index do |campaign, i|
   campaign.comments.create!(
