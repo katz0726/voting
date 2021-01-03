@@ -1,0 +1,31 @@
+<h1>ユーザ情報</h1>
+
+<%= form_for @user do |f| %>
+  <div class="form-group field form-inline">
+    <%= f.label :username_last %>
+    <%= f.text_field :username_last, class: 'form-control ' %>
+    <%= f.label :username_first %>
+    <%= f.text_field :username_first, class: 'form-control' %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :gender %>
+    <%= f.select :gender, VotingConst::GENDER.invert, {},  class: 'form-control' %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
+
+  <div class="form-group field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{t('common/crud.update.title')}", class: 'btn btn-primary w-100' %>
+
+    <%= link_to "#{t('common/crud.back.title')}", user_path(current_user) %>
+  </div>
+<% end %>

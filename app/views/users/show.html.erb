@@ -1,6 +1,6 @@
-<% if user_signed_in? %>
-  <h1>my page</h1>
+<h1>ユーザ情報</h1>
 
+<div class="row">
   <dl>
     <dt>氏名</dt>
     <dd><%= format_username(current_user.username_last, current_user.username_first) %></dd>
@@ -10,5 +10,9 @@
 
     <dt>Email</dt>
     <dd><%= current_user.email %></dd>
+
+    <dt></dt>
+    <dd><%= image_tag current_user.avatar.to_s, {class: 'uploaded-img'} %></dd>
   </dl>
-<% end %>
+</div>
+<%= link_to "#{t('common/crud.edit.title')}", edit_user_path(current_user), {class: 'btn btn-primary w-100'} %>

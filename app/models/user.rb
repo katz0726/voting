@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,7 +14,7 @@ class User < ApplicationRecord
   validates :username_last, presence: {message: 'を入力してください' }
   validates :username_first, presence:{message: 'を入力してください' }
 
-  def already_liked?(campaign)
+  def already_supported?(campaign)
     self.supporters.exists?(campaign_id: campaign.id)
   end
 end

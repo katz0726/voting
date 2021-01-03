@@ -24,6 +24,8 @@ ja:
       title: 賛同する
     already_supported:
       title: 賛同済み
+    back:
+      title: 戻る
   header:
     self:
       start_campaign: キャンペーンを立ち上げる

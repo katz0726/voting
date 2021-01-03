@@ -21,14 +21,8 @@ end
     title: "テストタイトル#{n + 1}",
     content: "テスト#{n + 1}",
     goal: 100000,
-    campaign_for: "テスト機関#{n + 1}"
-  )
-end
-
-Campaign.all.each_with_index do |campaign, i|
-  campaign.comments.create!(
-    user_id: i + 1,
-    content: "キャンペーンコメント#{i + 1}"
+    campaign_for: "テスト機関#{n + 1}",
+    achieved: 0
   )
 end
 
@@ -46,12 +40,13 @@ TagMap.create!(:campaign_id => 4, :tag_id => 4)
 TagMap.create!(:campaign_id => 5, :tag_id => 5)
 TagMap.create!(:campaign_id => 6, :tag_id => 6)
 
-Supporter.create!(:campaign_id => 1, :user_id => 1, :visible => 0)
-Supporter.create!(:campaign_id => 1, :user_id => 2, :visible => 0)
-Supporter.create!(:campaign_id => 2, :user_id => 1, :visible => 0)
-Supporter.create!(:campaign_id => 3, :user_id => 1, :visible => 0)
-Supporter.create!(:campaign_id => 3, :user_id => 2, :visible => 1)
-Supporter.create!(:campaign_id => 3, :user_id => 3, :visible => 1)
+Campaign.all.each_with_index do |campaign, i|
+  campaign.supporters.create!(
+    campaign_id: i + 1,
+    user_id: i + 1,
+    visible: 0
+  )
+end
 
 Campaign.all.each_with_index do |campaign, i|
   campaign.comments.create!(
