@@ -144,3 +144,15 @@ p.bubble:after {
 li.list-group-item {
   border: none;
 }
+
+/** アイコン */
+li.header-right-item {
+  margin-right: 10px;
+}
+
+img.user-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

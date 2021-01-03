@@ -17,7 +17,8 @@
   </ul>
 
   <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+    <li class="nav-item header-right-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+    <li class="nav-item header-right-item"><%= show_avatar(current_user.avatar.to_s)%></li>
     <li class="nav-item">
       <% if user_signed_in? %>
         <%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %>
