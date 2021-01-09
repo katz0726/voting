@@ -17,14 +17,12 @@
   </ul>
 
   <ul class="navbar-nav">
-    <li class="nav-item header-right-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-    <li class="nav-item header-right-item"><%= show_avatar(current_user.avatar.to_s)%></li>
-    <li class="nav-item">
-      <% if user_signed_in? %>
-        <%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %>
-      <% else %>
-        <%= link_to 'サインイン', new_user_session_path, {class: 'nav-link'} %>
-      <% end %>
-    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item header-right-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+      <li class="nav-item header-right-item"><%= show_avatar(current_user.avatar.to_s)%></li>
+      <li class="nav-item header-right-item"><%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %></li>
+    <% else %>
+      <li class="nav-item header-right-item"><%= link_to 'サインイン', new_user_session_path, {class: 'nav-link'} %></li>
+    <% end %>
   </ul>
 </nav>

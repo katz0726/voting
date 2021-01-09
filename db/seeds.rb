@@ -11,6 +11,7 @@
     :username_last => "一般",
     :username_first => "ユーザ#{n + 1}",
     :gender => rand(1..2),
+    :avatar => '',
     :email => "hogehoge#{n + 1}@hoge.com",
     :password => "hugahuga#{n + 1}")
 end
@@ -44,14 +45,14 @@ Campaign.all.each_with_index do |campaign, i|
   campaign.supporters.create!(
     campaign_id: i + 1,
     user_id: i + 1,
-    visible: 0
+    visible: 1
   )
 end
 
-Campaign.all.each_with_index do |campaign, i|
-  campaign.comments.create!(
-    campaign_id: i + 1,
-    user_id: i + 1,
-    content: "テストコメント#{i + 1}"
-  )
-end
+# Campaign.all.each_with_index do |campaign, i|
+#   campaign.comments.create!(
+#     campaign_id: i + 1,
+#     user_id: i + 1,
+#     content: "テストコメント#{i + 1}"
+#   )
+# end
