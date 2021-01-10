@@ -1,4 +1,6 @@
 class Campaign < ApplicationRecord
+  mount_uploader :campaign_image, CampaignUploader
+
   belongs_to :user
   
   has_many :tag_maps, dependent: :destroy

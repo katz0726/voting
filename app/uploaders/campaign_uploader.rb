@@ -1,6 +1,6 @@
-class AvatarUploader < BaseUploader
+class CampaignUploader < BaseUploader
   def size_range
-    1.megabytes
+    2.megabytes
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

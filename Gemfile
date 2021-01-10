@@ -43,6 +43,7 @@ gem 'jquery-rails', '~> 4.4'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'high_voltage', '~> 3.1', '>= 3.1.2'
 gem 'carrierwave', '~> 2.1'
+gem 'mini_magick', '~> 4.11'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
 group :development, :test do

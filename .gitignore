@@ -33,3 +33,6 @@
 
 # Ignore feature test result
 /test/reports/*
+
+# Ignore uploaded images
+/public/uploads/*

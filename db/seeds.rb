@@ -11,9 +11,9 @@
     :username_last => "一般",
     :username_first => "ユーザ#{n + 1}",
     :gender => rand(1..2),
-    :avatar => '',
-    :email => "hogehoge#{n + 1}@hoge.com",
-    :password => "hugahuga#{n + 1}")
+    :avatar => open("./db/fixtures/user_icon_sample.jpg"),
+    :email => "user#{n + 1}@gmail.com",
+    :password => "P@ssw0rd#{n + 1}")
 end
 
 6.times do |n|
@@ -22,6 +22,7 @@ end
     title: "テストタイトル#{n + 1}",
     content: "テスト#{n + 1}",
     goal: 100000,
+    campaign_image: open("./db/fixtures/sky.jpg"),
     campaign_for: "テスト機関#{n + 1}",
     achieved: 0
   )
