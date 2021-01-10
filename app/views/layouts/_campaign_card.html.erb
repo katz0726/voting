@@ -1,5 +1,5 @@
 <!-- 新規キャンペーン -->
-<% @campaigns.each do |campaign| %>
+<% @campaigns.each_with_index do |campaign, i| %>
   <div class="card">
     <div class="card-header">
       <% campaign.tags.each do |tag| %>
@@ -12,8 +12,9 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-9">
-          <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
-          <p class="card-text"><%= campaign.content %></p>
+          <h5 class="card-title"><%= campaign.title %></h5>
+          <p class="card-text" style="height: 75px; overflow-y:hidden;"><%= campaign.content %></p>
+          <%= link_to "続きを読む", campaign_path(campaign) %>
         </div>
         <div class="col-xs-12 col-sm-3">
           <%= image_tag campaign.campaign_image.to_s, class: 'card-img-right', alt: 'キャンペーン画像' %>

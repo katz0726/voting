@@ -1,4 +1,6 @@
 class Campaign < ApplicationRecord
+  include VotingConst
+
   mount_uploader :campaign_image, CampaignUploader
 
   belongs_to :user
@@ -12,7 +14,7 @@ class Campaign < ApplicationRecord
   accepts_nested_attributes_for :tags
 
   validates :title, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, length: {minimum: MIN_LENGTH_CAMPAIGN_CONTENT}
   validates :goal, presence: true, numericality: {only_integer: true, :greater_than => 0}
   validates :campaign_for, presence: true
 
