@@ -3,9 +3,10 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns
   def index
-    if params[:condition].present?
+    if params.has_key?(:condition)
       result = Campaign.includes(:tags).search(params[:condition])
       @campaigns = Kaminari.paginate_array(result).page(params[:page])
+      @condition = params[:condition]
     else
       @campaigns = Campaign.all.includes(:tags).order(updated_at:'desc').page(params[:page])
     end

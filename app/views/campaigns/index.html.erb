@@ -3,10 +3,18 @@
 <h1 class="page-title"><%= Campaign.human_attribute_name :campaign_list %></h1><br>
 
 <ul class="nav nav-tabs">
-  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_attention}", campaigns_path, {class: 'nav-link active'} %></li>
-  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_popular}", campaigns_path(condition: 'popular'), {class: 'nav-link'} %></li>
-  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_latest}", campaigns_path(condition: 'latest'), {class: 'nav-link'} %></li>
-  <li class="nav-item"><%= link_to "#{Campaign.human_attribute_name :search_succeed}", campaigns_path(condition: 'succeed'), {class: 'nav-link'} %></li>
+  <li class="nav-item">
+    <%= link_to "#{Campaign.human_attribute_name :search_attention}", campaigns_path, {id: 'link-search-attention', class: 'nav-link tab active'} %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{Campaign.human_attribute_name :search_popular}", campaigns_path(condition: 'popular'), {id: 'link-search-popular', class: 'nav-link tab'} %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{Campaign.human_attribute_name :search_latest}", campaigns_path(condition: 'latest'), {id: 'link-search-latest', class: 'nav-link tab'} %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{Campaign.human_attribute_name :search_succeed}", campaigns_path(condition: 'succeed'), {id: 'link-search-succeed', class: 'nav-link tab'} %>
+  </li>
 </ul>
 
 <!-- 新規キャンペーン -->
@@ -14,3 +22,29 @@
   <%= render 'campaign_list' %>
 </div>
 <%= link_to_next_page @campaigns, 'もっと見る', {id: 'readmore-btn', class: 'btn btn-info w-100', remote: true} %>
+
+<script type="text/javascript">
+  $(function() {
+    //$("[id^='link-search-']").on('click', function(e) {});
+    $("[id^='link-search-']").removeClass('active');
+
+    const SEARCH_CONDITION = "<%= @condition %>";
+    var ele = '';
+
+    switch (SEARCH_CONDITION) {
+      case 'popular':
+        ele = 'link-search-popular';
+        break;
+      case 'latest':
+        ele = 'link-search-latest';
+        break;
+      case 'succeed':
+        ele = 'link-search-succeed';
+        break;
+      default:
+        ele = 'link-search-attention';
+    }
+
+    $('#' + ele).addClass('active');
+  });
+</script>
