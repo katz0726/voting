@@ -23,7 +23,7 @@
         <% @comments.each do |comment| %>
           <div class="comment-area-inner">
             <p>
-              <%= show_avatar(comment.user.avatar.to_s)%>
+              <%= show_avatar comment.user.avatar %>
               <strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %>
             </p>
             <div><%= comment.content %></div>
@@ -42,7 +42,7 @@
         <ul class="list-group">
           <% @supporters.each do |supporter| %>
             <li class="list-group-item">
-              <%= show_avatar(supporter.user.avatar.to_s)%>
+              <%= show_avatar supporter.user.avatar %>
               <% if supporter.visible == true %>
                 <%== "#{format_username(supporter.user.username_last, supporter.user.username_first)}
                   さんが #{time_ago supporter.updated_at}前 に賛同しました" %>

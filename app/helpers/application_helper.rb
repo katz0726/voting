@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def show_avatar avatar
     if avatar.present?
-      image_tag current_user.avatar.to_s, {class: 'user-icon'}
+      image_tag avatar.to_s, {class: 'user-icon'}
     else
       image_tag 'user_default_icon.png', {class: 'user-icon'}
     end

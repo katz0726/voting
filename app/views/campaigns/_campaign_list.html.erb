@@ -2,19 +2,20 @@
   <div class="card">
     <div class="card-header"></div>
     <div class="card-body">
-      <div class="col-sm-4">
-        <img src="" class="card-img-right" alt="カードの画像">
-      </div>
-      <div class="col-sm-8">
-        <h5 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h5>
-        <p class="card-text"><%= campaign.content %></p>
-        <span>read more</span>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <%= image_tag campaign.campaign_image.to_s, class: 'card-img-right', alt: 'キャンペーン画像' %>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+          <h5 class="card-title"><%= campaign.title %></h5>
+          <p class="card-text" style="height: 75px; overflow-y:hidden;"><%= campaign.content %></p>
+          <%= link_to "続きを読む", campaign_path(campaign) %>
 
-        <div></div>
-        <p>
-          目標<%= delimited_by_comma(campaign.goal) %>人のうち
-          <strong><%= delimited_by_comma(campaign.supporters.count) %>人が賛同しました</strong>
-        </p>
+          <p>
+            目標<%= delimited_by_comma(campaign.goal) %>人のうち
+            <strong><%= delimited_by_comma(campaign.supporters.count) %>人が賛同しました</strong>
+          </p>
+        </div>
       </div>
     </div>
   </div>

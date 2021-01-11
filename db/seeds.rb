@@ -16,11 +16,12 @@
     :password => "P@ssw0rd#{n + 1}")
 end
 
-6.times do |n|
+20.times do |n|
   Campaign.create!(
-    user_id: n + 1,
+    user_id: rand(6) + 1,
     title: "テストタイトル#{n + 1}",
-    content: "テスト#{n + 1}",
+    content: "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+    テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト",
     goal: 100000,
     campaign_image: open("./db/fixtures/sky.jpg"),
     campaign_for: "テスト機関#{n + 1}",
@@ -41,11 +42,25 @@ TagMap.create!(:campaign_id => 3, :tag_id => 3)
 TagMap.create!(:campaign_id => 4, :tag_id => 4)
 TagMap.create!(:campaign_id => 5, :tag_id => 5)
 TagMap.create!(:campaign_id => 6, :tag_id => 6)
+TagMap.create!(:campaign_id => 7, :tag_id => 1)
+TagMap.create!(:campaign_id => 8, :tag_id => 2)
+TagMap.create!(:campaign_id => 9, :tag_id => 3)
+TagMap.create!(:campaign_id => 10, :tag_id => 4)
+TagMap.create!(:campaign_id => 11, :tag_id => 5)
+TagMap.create!(:campaign_id => 12, :tag_id => 6)
+TagMap.create!(:campaign_id => 13, :tag_id => 1)
+TagMap.create!(:campaign_id => 14, :tag_id => 2)
+TagMap.create!(:campaign_id => 15, :tag_id => 3)
+TagMap.create!(:campaign_id => 16, :tag_id => 4)
+TagMap.create!(:campaign_id => 17, :tag_id => 5)
+TagMap.create!(:campaign_id => 18, :tag_id => 6)
+TagMap.create!(:campaign_id => 19, :tag_id => 1)
+TagMap.create!(:campaign_id => 20, :tag_id => 2)
 
 Campaign.all.each_with_index do |campaign, i|
   campaign.supporters.create!(
     campaign_id: i + 1,
-    user_id: i + 1,
+    user_id: rand(6) + 1,
     visible: 1
   )
 end
@@ -53,7 +68,7 @@ end
 # Campaign.all.each_with_index do |campaign, i|
 #   campaign.comments.create!(
 #     campaign_id: i + 1,
-#     user_id: i + 1,
+#     user_id: rand(6) + 1,
 #     content: "テストコメント#{i + 1}"
 #   )
 # end

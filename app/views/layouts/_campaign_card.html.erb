@@ -23,7 +23,7 @@
     </div>
     <div class="card-footer">
       <div class="float-left">
-        <%= show_avatar campaign.user.avatar.to_s %>
+        <%= show_avatar campaign.user.avatar %>
         <%= format_username(campaign.user.username_last, campaign.user.username_first) %>
       </div>
       <div class="float-right"><%= delimited_by_comma(campaign.supporters.count) %>人の賛同者</div>

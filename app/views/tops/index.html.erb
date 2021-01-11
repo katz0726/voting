@@ -9,7 +9,11 @@
     </div>
 
     <!-- 新規キャンペーン -->
-    <%= render 'layouts/campaign_card' %>
+    <div id="campaign-list">
+      <%= render 'layouts/campaign_card' %>
+    </div>
+
+    <%= link_to_next_page @campaigns, 'もっと見る', {id: 'readmore-btn', class: 'btn btn-info w-100', remote: true} %>
   </div>
 
   <%= render 'layouts/sidemenu' %>

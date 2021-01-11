@@ -1,2 +1,2 @@
-$('#campaign-list').append("<%= escape_javascript(render 'campaign_list', object: @campaigns) %>");
+$('#campaign-list').append("<%= escape_javascript(render 'layouts/campaign_card', object: @campaigns) %>");
 $("#readmore-btn").replaceWith("<%= escape_javascript(link_to_next_page @campaigns, 'もっと見る', {id: 'readmore-btn', class: 'btn btn-info w-100', remote: true}) %>");
