@@ -38,6 +38,13 @@ input[type="checkbox"] {
   height: 12px;
   display: inline-block;
 }
+
+textarea {
+  width: 100% !important;
+  height: 300px !important;
+  overflow-y: scroll !important;
+}
+
 /***************************************
         　　　　　固有
 ***************************************/

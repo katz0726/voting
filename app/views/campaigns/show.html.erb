@@ -2,10 +2,23 @@
   <h1 class="page-title"><%= @campaign.title %></h1>
 
   <div class="col-md-8">
-    <p>
-      <%= t('campaign.self.sender') %>: <%= format_username(@campaign.user.username_last, @campaign.user.username_first) %>&ensp;
-      <%= t('campaign.self.destination') %>: <%= @campaign.campaign_for %>
-    </p>
+    <div class="campaign-detail-header">
+      <div class="campaign-detail-header-left">
+        <%= t('campaign.self.sender') %>: <%= format_username(@campaign.user.username_last, @campaign.user.username_first) %>&ensp;
+        <%= t('campaign.self.destination') %>: <%= @campaign.campaign_for %>
+      </div>
+
+      <% if current_user.id == @campaign.user.id %>
+        <div class="campaign-detail-header-right">
+          <%= link_to edit_campaign_path(@campaign), {class: 'campaign-control-icon-link'} do %>
+            <i class="fas fa-pen fa-lg campaign-control-icon"></i>
+          <% end %>
+          <%= link_to campaign_path(@campaign), {class: 'campaign-control-icon-link', method: :delete}, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
+            <i class="fas fa-trash-alt fa-lg campaign-control-icon"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
     <div><%= @campaign.content %></div>
 

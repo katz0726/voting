@@ -11,6 +11,9 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    confirms:
+      messages:
+        delete: 本当に削除してもよろしいでしょうか？
     models:
       camapaign:
       tag:

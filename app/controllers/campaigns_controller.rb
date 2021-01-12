@@ -52,10 +52,24 @@ class CampaignsController < ApplicationController
 
   # PATCH/PUT /campaigns/1
   def update
+    @campaign = Campaign.find(params[:id])
+
+    if @campaign.update(campaign_params)
+      flash[:notice] = t("activerecord.notices.messages.save_completed", :action_name => '更新')
+      redirect_to root_url
+    else
+      flash.now[:error] = t("activerecord.errors.messages.save_failed", :action_name => '更新')
+      render :edit
+    end
   end
 
   # DELETE /campaigns/1
   def destroy
+    @campaign = Campaign.find(params[:id])
+    @campaign.destroy
+
+    flash[:notice] = t("activerecord.notices.messages.save_completed", :action_name => '削除')
+    redirect_to root_url
   end
 
   private

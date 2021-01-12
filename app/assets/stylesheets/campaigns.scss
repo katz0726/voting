@@ -1,6 +1,7 @@
 $bg-color: #f8f9fa;
 
 $border_color: #dbd9db;
+$icon_color: #dbd9db;
 
 /***************************************
         　　　　　共通
@@ -88,4 +89,29 @@ div.supporter-lists {
 div.auth-content-area {
   width: 70%;
   margin: 0 auto;
+}
+
+/***************************************
+        　　　　　show
+***************************************/
+
+div.campaign-detail-header {
+  display: flex;
+  margin-bottom: 30px;
+
+  div.campaign-detail-header-left {
+    width: 80%;
+  }
+
+  div.campaign-detail-header-right {
+    width: 20%;
+  }
+
+  a.campaign-control-icon-link {
+    margin-left: 30px;
+
+    .campaign-control-icon {
+      color: $icon_color;
+    }
+  }
 }
