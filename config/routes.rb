@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :tops
   resources :campaigns do
-    resources :comments, only: [:create, :update]
+    resources :comments, only: [:create, :update, :destroy]
     resources :supporters, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

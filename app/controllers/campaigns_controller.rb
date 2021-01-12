@@ -66,10 +66,14 @@ class CampaignsController < ApplicationController
   # DELETE /campaigns/1
   def destroy
     @campaign = Campaign.find(params[:id])
-    @campaign.destroy
-
-    flash[:notice] = t("activerecord.notices.messages.save_completed", :action_name => '削除')
-    redirect_to root_url
+    
+    if @campaign.destroy
+      flash[:notice] = t("activerecord.notices.messages.save_completed", :action_name => '削除')
+      redirect_to root_url
+    else
+      flash.now[:error] = t("activerecord.errors.messages.save_failed", :action_name => '削除')
+      render :show
+    end
   end
 
   private

@@ -9,7 +9,7 @@ class Campaign < ApplicationRecord
   has_many :tags, through: :tag_maps
   has_many :supporters, dependent: :destroy
   has_many :supported_users, through: :supporters, source: :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   accepts_nested_attributes_for :tags
 

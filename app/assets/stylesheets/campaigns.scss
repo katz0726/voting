@@ -67,6 +67,21 @@ div.comment-area {
   }
 }
 
+div.comment-area-header {
+  display: flex;
+  margin-bottom: 10px;
+
+  div.comment-area-header-left {
+    width: 85%;
+  }
+
+  div.comment-area-header-right {
+    width: 15%;
+    text-align: right;
+    padding-right: 20px;
+  }
+}
+
 /***************************************
         　　　　　Supports
 ***************************************/
@@ -109,9 +124,5 @@ div.campaign-detail-header {
 
   a.campaign-control-icon-link {
     margin-left: 30px;
-
-    .campaign-control-icon {
-      color: $icon_color;
-    }
   }
 }

@@ -11,10 +11,10 @@
       <% if current_user.id == @campaign.user.id %>
         <div class="campaign-detail-header-right">
           <%= link_to edit_campaign_path(@campaign), {class: 'campaign-control-icon-link'} do %>
-            <i class="fas fa-pen fa-lg campaign-control-icon"></i>
+            <i class="fas fa-pen fa-lg control-icon"></i>
           <% end %>
           <%= link_to campaign_path(@campaign), {class: 'campaign-control-icon-link', method: :delete}, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
-            <i class="fas fa-trash-alt fa-lg campaign-control-icon"></i>
+            <i class="fas fa-trash-alt fa-lg control-icon"></i>
           <% end %>
         </div>
       <% end %>
@@ -35,10 +35,23 @@
       <div class="comment-lists">
         <% @comments.each do |comment| %>
           <div class="comment-area-inner">
-            <p>
-              <%= show_avatar comment.user.avatar %>
-              <strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong> <%= comment.updated_at.strftime("%Y-%m-%d") %>
-            </p>
+            <div class="comment-area-header">
+              <div class="comment-area-header-left">
+                <%= show_avatar comment.user.avatar %>
+                <span style="margin-right: 10px;">
+                  <strong><%= format_username(comment.user.username_last, comment.user.username_first) %></strong>
+                </span>
+                <%= comment.updated_at.strftime("%Y-%m-%d %H:%m") %>
+              </div>
+
+              <% if current_user.id == comment.user.id %>
+                <div class="comment-area-header-right">
+                  <%= link_to campaign_comment_path(@campaign, comment), method: :delete, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
+                    <i class="fas fa-trash-alt fa-lg control-icon"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
             <div><%= comment.content %></div>
           </div>
         <% end %>
