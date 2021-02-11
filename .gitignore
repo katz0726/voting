@@ -36,3 +36,6 @@
 
 # Ignore uploaded images
 /public/uploads/*
+
+#Ignore simplecov reports
+/coverage/
