@@ -1,28 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <%= link_to 'Change.org', root_path, {id: 'header-title', class: 'navbar-brand h1'} %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <%= link_to 'Change.org', root_path, {id: 'header-title', class: 'navbar-brand h1'} %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <%= link_to "#{t('header.self.start_campaign')}", new_campaign_path, {class: 'nav-link'} %>
-    </li>
-    <% if current_user %>
-      <li class="nav-item"><%= link_to "#{t('header.self.mypage')}", user_path(current_user), {class: 'nav-link'} %></li>
-    <% end %>
-    <li class="nav-item"><%= link_to "#{t('header.self.campaign_list')}", campaigns_path, {class: 'nav-link'} %></li>
-    <li class="nav-item"><%= link_to "#{t('header.self.member_program')}", page_path('member'), {class: 'nav-link'} %></li>
-  </ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "#{t('header.self.start_campaign')}", new_campaign_path, {class: 'nav-link'} %>
+      </li>
+      <% if current_user %>
+        <li class="nav-item"><%= link_to "#{t('header.self.mypage')}", user_path(current_user), {class: 'nav-link'} %></li>
+      <% end %>
+      <li class="nav-item"><%= link_to "#{t('header.self.campaign_list')}", campaigns_path, {class: 'nav-link'} %></li>
+      <li class="nav-item"><%= link_to "#{t('header.self.member_program')}", page_path('member'), {class: 'nav-link'} %></li>
+    </ul>
 
-  <ul class="navbar-nav">
-    <% if user_signed_in? %>
-      <li class="nav-item header-right-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
-      <li class="nav-item header-right-item"><%= show_avatar current_user.avatar.to_s %></li>
-      <li class="nav-item header-right-item"><%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %></li>
-    <% else %>
-      <li class="nav-item header-right-item"><%= link_to 'サインイン', new_user_session_path, {class: 'nav-link'} %></li>
-    <% end %>
-  </ul>
-</nav>
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item header-right-item"><a class="nav-link" href="#"><i class="fas fa-search"></i></a></li>
+        <li class="nav-item header-right-item"><%= show_avatar current_user.avatar.to_s %></li>
+        <li class="nav-item header-right-item"><%= link_to 'サインアウト', destroy_user_session_path, {class: 'nav-link'} %></li>
+      <% else %>
+        <li class="nav-item header-right-item"><%= link_to 'サインイン', new_user_session_path, {class: 'nav-link'} %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

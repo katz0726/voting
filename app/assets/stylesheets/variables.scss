@@ -1,0 +1,23 @@
+// application base color
+$application_base_color:  #ec2c22;
+$secondary_color: #dbd9db;
+
+$header_color: $secondary_color;
+$footer_bgcolor: #efefef;
+
+$border: $secondary_color 1px solid;
+
+// icon
+$primary_icon_color: $application_base_color;
+$secondary_icon_color: $secondary_color;
+
+//button/link
+$button_color: #ffffff;
+
+// messages
+$error-color: $application_base_color;
+$notice-color: #28a745;
+$message-text-color: #ffffff;
+
+// images
+$bg-image-url: image-url('world.png');

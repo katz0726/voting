@@ -1,8 +1,4 @@
-$title_color:  #ec2c22;
-$header_color: #737273;
-$footer_bgcolor: #efefef;
-
-$icon_color: #dbd9db;
+@import "./variables";
 
 /***************************************
         　　　　　共通
@@ -53,16 +49,16 @@ div.container {
 }
 
 #header-title {
-  color: $title_color;
+  color: $application_base_color;
   font-weight: bold;
   font-size: 1.75rem !important;
 }
 
 footer {
-  height: 500px;
+  height: 570px;
   margin-top: 80px;
   padding: 30px 120px 10px 120px;
-  background-color: #efefef;
+  background-color: $footer_bgcolor;
 
   h5 {
     font-size: 14px;
@@ -90,7 +86,7 @@ span.help-icon {
   margin-left: 5px;
 
   .help-icon {
-    color: $icon_color;
+    color: $secondary_icon_color;
   }
 }
 
@@ -129,16 +125,16 @@ p.bubble:after {
 
 /** メッセージ */
 .notice-message {
-  background-color: #28a745;
-  color: #ffffff;
+  background-color: $notice-color;
+  color: $message-text-color;
   font-weight: bold;
   padding: 12px 20px;
   margin: 30px 0px;
 }
 
 .error-message {
-  background-color: #ec2c22;
-  color: #ffffff;
+  background-color: $error-color;
+  color: $message-text-color;
   font-weight: bold;
   padding: 12px 20px;
   margin: 30px 0px;
@@ -164,6 +160,14 @@ img.user-icon {
   margin-right: 10px;
 }
 
-.control-icon {
-  color: $icon_color;
+/** アプリケーションで共通的に使用するアイコン */
+.primary-icon {
+  color: $primary_icon_color;
+  margin-right: 10px;
+}
+
+/** コントロール操作（編集、削除等）用アイコン */
+.secondary-icon {
+  color: $secondary_icon_color;
+  margin-right: 10px;
 }

@@ -1,7 +1,4 @@
-$bg-color: #f8f9fa;
-
-$border_color: #dbd9db;
-$icon_color: #dbd9db;
+@import "./variables";
 
 /***************************************
         　　　　　共通
@@ -16,18 +13,14 @@ h1.page-title {
 /***************************************
         　　　　　一覧
 ***************************************/
-// div.campaign-list {
-//   background-color: $bg-color;
-// }
-
 div.latest-campaigns-area {
   margin: 0 auto;
 }
 
 p.latest-campaign-header {
   font-weight: bolder;
-  color: #ec2c22;
-  border-bottom:#dbd9db 1px solid;
+  color: $application_base_color;
+  border-bottom: $border;
 }
 
 div.page-header {
@@ -62,7 +55,7 @@ div.comment-area {
 
     div.comment-area-inner {
       padding: 20px 0px;
-      border-bottom: $border_color 1px solid; 
+      border-bottom: $border; 
     }
   }
 }
@@ -93,7 +86,7 @@ div.supporter-lists {
 .supporter-form {
   .btn-support {
     border: none !important;
-    background-color: #ec2c22 !important;
+    background-color: $application_base_color !important;
   }
 }
 
@@ -122,7 +115,7 @@ div.campaign-detail-header {
     width: 20%;
   }
 
-  a.campaign-control-icon-link {
+  a.campaign-secondary-icon-link {
     margin-left: 30px;
   }
 }

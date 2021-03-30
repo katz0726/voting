@@ -10,11 +10,11 @@
 
       <% if current_user.id == @campaign.user.id %>
         <div class="campaign-detail-header-right">
-          <%= link_to edit_campaign_path(@campaign), {class: 'campaign-control-icon-link'} do %>
-            <i class="fas fa-pen fa-lg control-icon"></i>
+          <%= link_to edit_campaign_path(@campaign), {class: 'campaign-secondary-icon-link'} do %>
+            <i class="fas fa-pen fa-lg secondary-icon"></i>
           <% end %>
-          <%= link_to campaign_path(@campaign), {class: 'campaign-control-icon-link', method: :delete}, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
-            <i class="fas fa-trash-alt fa-lg control-icon"></i>
+          <%= link_to campaign_path(@campaign), {class: 'campaign-secondary-icon-link', method: :delete}, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
+            <i class="fas fa-trash-alt fa-lg secondary-icon"></i>
           <% end %>
         </div>
       <% end %>
@@ -47,7 +47,7 @@
               <% if current_user.id == comment.user.id %>
                 <div class="comment-area-header-right">
                   <%= link_to campaign_comment_path(@campaign, comment), method: :delete, data: { confirm: "#{t("activerecord.confirms.messages.delete")}" } do %>
-                    <i class="fas fa-trash-alt fa-lg control-icon"></i>
+                    <i class="fas fa-trash-alt fa-lg secondary-icon"></i>
                   <% end %>
                 </div>
               <% end %>

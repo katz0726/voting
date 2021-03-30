@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <!-- トップコンテンツ -->
     <div class="top-content-area">
       <h1><%= t('top.self.title') %></h1>
@@ -8,7 +8,79 @@
       <%= link_to 'キャンペーンを立ち上げる', new_campaign_path, {class: 'btn btn-primary btn-lg'}%>
     </div>
 
+    <% if @succeeded_campaigns.present? %>
+      <div class="succeeded-campaign-area">
+        <div class="ribbon">
+          <div class="ribbon-content">
+            <span>キャンペーン成功！</span>
+          </div>  
+        </div>
+        <div id="carousel-indicator" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <% @succeeded_campaigns.each.with_index do |succeeded_campaign, i| %>
+              <li data-target="#carousel-indicator" data-slide-to="<%= i %>" class="<%= i.zero? ? 'active' : '' %>">
+                <%= image_tag succeeded_campaign.campaign_image.to_s, class: 'd-block w-100 img-fluid' %>
+              </li>
+            <% end %>
+          </ol>
+
+          <div class="carousel-inner">
+            <% @succeeded_campaigns.each.with_index do |succeeded_campaign, i| %>
+              <div class="carousel-item <%= i.zero? ? 'active' : '' %>">
+                <div class="card">
+                  <div class="row no-gutters">
+                    <div class="col-md-6">
+                      <%= link_to campaign_path(succeeded_campaign) do %>
+                        <%= image_tag succeeded_campaign.campaign_image.to_s, class: 'd-block w-100 img-fluid' %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= succeeded_campaign.title %></h4>
+                        <p class="card-text" style="height: 75px; overflow-y:hidden;"><%= succeeded_campaign.content %></p>
+                        <%= link_to "続きを読む", campaign_path(succeeded_campaign) %>
+                      </div>
+                      <div class="card-footer">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-4 card-footer-item">
+                              <strong><%= format_username(succeeded_campaign.user.username_last, succeeded_campaign.user.username_first) %></strong>
+                            </div>
+                            <div class="col-md-4 card-footer-item">
+                              <small><strong><i class="fas fa-user-friends primary-icon"></i><%= delimited_by_comma(succeeded_campaign.supporters.count) %></strong></small><br>人の賛同者
+                            </div>
+                            <div class="col-md-4 card-footer-item">
+                              <i class="far fa-comment-alt secondary-icon"></i>メディア掲載
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            <% end %>
+          </div>
+
+          <%= link_to '#carousel-indicator', {class: 'carousel-control-prev', role: 'button', 'data-slide': 'prev'} do %>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          <% end %>
+          <%= link_to '#carousel-indicator', {class: 'carousel-control-next', role: 'button', 'data-slide': 'next'} do %>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
     <!-- 新規キャンペーン -->
+    <h2>Change.org注目のキャンペーン</h2>
     <div id="campaign-list">
       <%= render 'layouts/campaign_card' %>
     </div>
@@ -16,5 +88,7 @@
     <%= link_to_next_page @campaigns, 'もっと見る', {id: 'readmore-btn', class: 'btn btn-info w-100', remote: true} %>
   </div>
 
-  <%= render 'layouts/sidemenu' %>
+  <div class="col-md-3 float-right campaign-topic-area">
+    <%= render 'layouts/sidemenu' %>
+  </div>
 </div>

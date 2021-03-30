@@ -26,7 +26,10 @@
         <%= show_avatar campaign.user.avatar %>
         <%= format_username(campaign.user.username_last, campaign.user.username_first) %>
       </div>
-      <div class="float-right"><%= delimited_by_comma(campaign.supporters.count) %>人の賛同者</div>
+      <div class="float-right">
+        <i class="fas fa-user-friends"></i>
+        <%= delimited_by_comma(campaign.supporters.count) %>人の賛同者
+      </div>
     </div>      
   </div>
 <% end %>

@@ -1,46 +1,99 @@
-$border: #737273 1px solid;
-$bg-image-url: image-url('world.png');
+@import "./variables";
 
 div.top-content-area {
-    background-image: $bg-image-url;
-    height: 260px;
-    padding-top: 30px;
-    margin: 26px 0px;
-    text-align: center;
-/*
-    img#top-content-img {
-        position: relative;
-        height: 320px;
-        opacity: 0.3;
-    }
-    */
+  background-image: $bg-image-url;
+  height: 260px;
+  padding-top: 30px;
+  margin-top: 26px;
+  text-align: center;
 }
 
+.succeeded-campaign-area {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 220px;
+  z-index: 20px;
+
+  .ribbon {
+    position: absolute;
+    top: -7px;
+    left: -10px;
+    background-color: $application_base_color;
+    color: $button_color;
+    width: 110px;
+    text-align: center;
+    font-size: 4px;
+    border-radius: 4px;
+    z-index: 9999;
+
+    .ribbon-content {
+      padding: 5px 10px;
+    }
+  }
+}
+
+.card-body {
+  height: 75%;
+}
+
+.card-footer {
+  height: 25%;
+
+  .card-footer-item {
+    padding: 10px;
+  }
+}
+
+/** カルーセル */
+.carousel {
+  .carousel-indicators {
+    bottom:-95px;
+  }
+
+  .carousel-control-prev {
+    left: -110px;
+  }
+  .carousel-control-next {
+    right: -110px;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    filter: invert(20%);
+  }
+
+  .carousel-indicators li {
+    width: 140px;
+    height: 78px;
+    background-size: contain;
+  }
+}
+
+/** Change.org注目のキャンペーン一覧 */
 div.card {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 div.card-footer {
-    background-color: transparent;
-    border-top: none;
+  background-color: transparent;
+  border-top: none;
 }
 
 div.campaign-topic-area {
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 
-    a.campaign-topic-link {
-        display: inline-block;
-        height: 30px;
-        background-color: #ffffff;
-        color: #737273;
-        font-size: 11px;
+  a.campaign-topic-link {
+    display: inline-block;
+    height: 30px;
+    background-color: #ffffff;
+    color: #737273;
+    font-size: 11px;
 
-        text-align: center;
-        border: $border;
-        border-radius: 30px;
-        margin: 2.5px 1.5px;
-        padding: 7px 15px;
-    }
+    text-align: center;
+    border: $border;
+    border-radius: 30px;
+    margin: 2.5px 1.5px;
+    padding: 7px 15px;
+  }
 }

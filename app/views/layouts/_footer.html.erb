@@ -1,45 +1,47 @@
-<footer>
-  <div class="row">
-    <div class="col">
-      <div class="list-group content-up-right" style="max-width: 400px;">
-        <h5><%= t('footer.self.introduction.title') %></h5>
-        <%= link_to "#{t('footer.self.introduction.about')}", page_path('about'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.introduction.impact')}", page_path('impact'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.introduction.joboffer')}", page_path('job_offer'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.introduction.staff')}", page_path('staff'), {class: 'list-group-item list-group-item-action'} %>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="list-group content-up-right" style="max-width: 400px;">
+          <h5><%= t('footer.self.introduction.title') %></h5>
+          <%= link_to "#{t('footer.self.introduction.about')}", page_path('about'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.introduction.impact')}", page_path('impact'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.introduction.joboffer')}", page_path('job_offer'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.introduction.staff')}", page_path('staff'), {class: 'list-group-item list-group-item-action'} %>
+        </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="list-group box-up-left" style="max-width: 400px;">
-        <h5><%= t('footer.self.community.title') %></h5>
-        <%= link_to "#{t('footer.self.community.notice')}", page_path('notice_jpteam'), {class: 'list-group-item list-group-item-action'} %>
+      <div class="col">
+        <div class="list-group box-up-left" style="max-width: 400px;">
+          <h5><%= t('footer.self.community.title') %></h5>
+          <%= link_to "#{t('footer.self.community.notice')}", page_path('notice_jpteam'), {class: 'list-group-item list-group-item-action'} %>
+        </div>
       </div>
-    </div>
-    <div class="w-100 partition"></div>
-    <div class="col">
-      <div class="list-group box-down-right" style="max-width: 400px;">
-        <h5><%= t('footer.self.support.title') %></h5>
-        <%= link_to "#{t('footer.self.support.inquiry')}", page_path('inquiry'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.support.guide')}", page_path('campaign_guide'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.support.privacy')}", page_path('privacy'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.support.policy')}", page_path('policy'), {class: 'list-group-item list-group-item-action'} %>
-        <%= link_to "#{t('footer.self.support.cookie')}", page_path('cookie'), {class: 'list-group-item list-group-item-action'} %>
+      <div class="w-100 partition"></div>
+      <div class="col">
+        <div class="list-group box-down-right" style="max-width: 400px;">
+          <h5><%= t('footer.self.support.title') %></h5>
+          <%= link_to "#{t('footer.self.support.inquiry')}", page_path('inquiry'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.support.guide')}", page_path('campaign_guide'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.support.privacy')}", page_path('privacy'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.support.policy')}", page_path('policy'), {class: 'list-group-item list-group-item-action'} %>
+          <%= link_to "#{t('footer.self.support.cookie')}", page_path('cookie'), {class: 'list-group-item list-group-item-action'} %>
+        </div>
       </div>
-    </div>
-    
-    <div class="col">
-      <div class="list-group box-down-left" style="max-width: 400px;">
-        <h5><%= t('footer.self.follow.title') %></h5>
-        <a href="#" class="list-group-item list-group-item-action">
-          <i class="fab fa-lg fa-twitter sns-icon" style="color:#1DA1F2;"></i>
-          <%= t('footer.self.follow.twitter') %>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <i class="fab fa-lg fa-facebook-square sns-icon" style="color:#3B5998;"></i>
-          <%= t('footer.self.follow.facebook') %>
-        </a>
+      
+      <div class="col">
+        <div class="list-group box-down-left" style="max-width: 400px;">
+          <h5><%= t('footer.self.follow.title') %></h5>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="fab fa-lg fa-twitter sns-icon" style="color:#1DA1F2;"></i>
+            <%= t('footer.self.follow.twitter') %>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="fab fa-lg fa-facebook-square sns-icon" style="color:#3B5998;"></i>
+            <%= t('footer.self.follow.facebook') %>
+          </a>
+        </div>
       </div>
-    </div>
-  </div><hr />
-  <p id="copyright">&copy; 2020. Change.org PBC</p>
+    </div><hr />
+    <p id="copyright">&copy; 2020. Change.org PBC</p>
+  </div>
 </footer>

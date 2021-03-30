@@ -1,7 +1,6 @@
-<div class="col-md-3 float-right campaign-topic-area">
-  <h3><%= t('sidemenu.self.title') %></h3>
 
-  <% @tags.each do |tag| %>
-  <%= link_to tag.name, top_path(tag), {class: 'btn btn-primary campaign-topic-link', roll: 'button'}%>
-  <% end %>
-</div>
+<h3><%= t('sidemenu.self.title') %></h3>
+
+<% @tags.each do |tag| %>
+  <%= link_to tag.name, top_path(tag), {class: 'btn btn-primary campaign-topic-link', roll: 'button'} %>
+<% end %>
