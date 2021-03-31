@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  content: MyText
+未達成キャンペーン:
+  id: 1
+  title: テストタイトル
+  content: テスト内容
   goal: 1
+  user_id: 1
+  campaign_for: テスト機関
+  achieved: 0
+  campaign_image: something.jpg
 
-two:
-  title: MyString
-  content: MyText
+達成済みキャンペーン:
+  id: 2
+  title: テストタイトル
+  content: テスト内容
   goal: 1
+  user_id: 1
+  campaign_for: テスト機関
+  achieved: 1
+  campaign_image: something.jpg

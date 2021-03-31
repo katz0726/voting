@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  campaign_id: 1
+表示あり:
+  campaign_id: 2
+  visible: true
 
-two:
-  campaign_id: 1
+表示なし:
+  campaign_id: 2
+  visible: false

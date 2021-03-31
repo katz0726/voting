@@ -3,9 +3,4 @@
 one:
   campaign_id: 1
   user_id: 1
-  content: MyString
-
-two:
-  campaign_id: 1
-  user_id: 1
-  content: MyString
+  content: テストコメント
