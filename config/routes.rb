@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'tops#index'
 
   resources :users, only: [:show, :edit, :update]
-  resources :tops
+  resources :tops, only: [:index, :show]
   resources :campaigns do
     resources :comments, only: [:create, :update, :destroy]
     resources :supporters, only: [:create]
