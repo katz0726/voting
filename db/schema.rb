@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2021_03_31_132923) do
 
-  create_table "campaigns", force: :cascade do |t|
+  create_table "campaigns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
     t.text "content"
     t.integer "goal"
+    t.string "campaign_for"
+    t.string "campaign_image"
+    t.boolean "achieved", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.string "campaign_for"
-    t.boolean "achieved", default: false, null: false
-    t.string "campaign_image"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "campaign_id", null: false
     t.integer "user_id", null: false
     t.string "content", null: false
@@ -32,29 +32,33 @@ ActiveRecord::Schema.define(version: 2021_03_31_132923) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "supporters", force: :cascade do |t|
-    t.integer "campaign_id"
+  create_table "supporters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "campaign_id"
+    t.boolean "visible", default: false, null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.boolean "visible", default: false, null: false
     t.index ["campaign_id"], name: "index_supporters_on_campaign_id"
   end
 
-  create_table "tag_maps", force: :cascade do |t|
+  create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "campaign_id", null: false
     t.integer "tag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "username_last"
+    t.string "username_first"
+    t.integer "gender"
+    t.string "avatar"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -67,12 +71,9 @@ ActiveRecord::Schema.define(version: 2021_03_31_132923) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username_last"
-    t.string "username_first"
-    t.integer "gender"
-    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "supporters", "campaigns"
 end

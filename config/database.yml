@@ -5,29 +5,33 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV['DATABASE_MAX_THREADS'] { 100 } %>
+  reconnect: false
   timeout: 5000
+
 
 development:
   <<: *default
-  database: db/development.sqlite3
-  # adapter: mysql2
-  # encoding: utf8mb4
-  # reconnect: false
-  # database: voting
-  # pool: 100
-  # username: admin
-  # password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>
-  # host: localhost
+  host: <%= ENV['DATABASE_DEV_HOST'] %>
+  username: <%= ENV['DATABASE_DEV_USER'] %>
+  password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
+  database: voting_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  host: <%= ENV['DATABASE_TEST_HOST'] %>
+  username: <%= ENV['DATABASE_TEST_USER'] %>
+  password: <%= ENV['DATABASE_TEST_PASSWORD'] %>
+  database: voting_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: <%= ENV['DATABASE_PRO_HOST'] %>
+  username: <%= ENV['DATABASE_PRO_USER'] %>
+  password: <%= ENV['DATABASE_PRO_PASSWORD'] %>
+  database: voting_pro
