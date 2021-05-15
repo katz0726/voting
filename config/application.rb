@@ -27,5 +27,8 @@ module Voting
     config.i18n.available_locales = [:en, :ja]
     config.i18n.enforce_available_locales = true
     config.i18n.default_locale = :ja
+
+    # rack-dev-mark
+    config.rack_dev_mark.enable = true
   end
 end
